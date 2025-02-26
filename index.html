@@ -2,42 +2,523 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Blue Monday</title>
-<meta name="generator" content="WYSIWYG Web Builder 12 - http://www.wysiwygwebbuilder.com">
+<title>Planets</title>
+<meta name="generator" content="WYSIWYG Web Builder 20 - https://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="css/font-awesome.min.css" rel="stylesheet">
-<link href="css/BlueMonday.css" rel="stylesheet">
-<link href="css/wb12_bluemonday.css" rel="stylesheet">
+<style>
+body
+{
+   background-color: #000000;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-size: 13px;
+   line-height: 1.1875;
+   margin: 0;
+   padding: 0;
+}
+@keyframes clip-path-chevron-enter
+{
+   0% { clip-path: polygon(-25% 0%, 0% 50%, -25% 100%, -100% 100%, -75% 50%, -100% 0%);  }
+   75% { clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);  }
+   100% { clip-path: polygon(100% 0%, 100% 50%, 100% 100%, 0% 100%, 0% 50%, 0% 0%);  }
+}
+#wb_Section1
+{
+   height: 483px;
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   margin: 0;
+   background-color: transparent;
+   background-image: url('images/cosmos.jpg');
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+   border: 0px solid #DEDEDE;
+   border-radius: 0px;
+   text-align: left;
+}
+#Section1-card-body
+{
+   flex: 1 1 auto;
+   font-size: 0;
+}
+#Section1-card-item0
+{
+   box-sizing: border-box;
+   margin: 0;
+   position: absolute;
+   left: 20.3%;
+   top: 43.9%;
+   height: auto;
+   width: 8.5%;
+   padding: 0;
+}
+#Section1-card-item0 img
+{
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   border: 0px solid #000000;
+   border-radius: 0px;
+}
+#Section1-card-item1
+{
+   box-sizing: border-box;
+   margin: 0;
+   position: absolute;
+   left: 78.3%;
+   top: 65.2%;
+   height: auto;
+   width: 10.5%;
+   padding: 0;
+}
+#Section1-card-item1 img
+{
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   border: 0px solid #000000;
+   border-radius: 0px;
+}
+#Section1-card-item2
+{
+   box-sizing: border-box;
+   margin: 0;
+   position: absolute;
+   left: 11.4%;
+   top: 71.2%;
+   height: auto;
+   width: 10.7%;
+   padding: 0;
+}
+#Section1-card-item2 img
+{
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   border: 0px solid #000000;
+   border-radius: 0px;
+}
+#Section1-card-item3
+{
+   box-sizing: border-box;
+   margin: 0;
+   position: absolute;
+   left: 10.7%;
+   top: 15.5%;
+   height: auto;
+   width: 11.7%;
+   padding: 0;
+}
+#Section1-card-item3 img
+{
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   border: 0px solid #000000;
+   border-radius: 0px;
+}
+#Section1-card-item4
+{
+   box-sizing: border-box;
+   margin: 0;
+   position: absolute;
+   left: 35.6%;
+   top: 10.6%;
+   height: auto;
+   width: 20.3%;
+   padding: 0;
+}
+#Section1-card-item4 img
+{
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   border: 0px solid #000000;
+   border-radius: 0px;
+}
+#Section1-card-item5
+{
+   box-sizing: border-box;
+   margin: 0;
+   position: absolute;
+   left: 72.9%;
+   top: 17%;
+   height: auto;
+   width: 14.9%;
+   padding: 0;
+}
+#Section1-card-item5 img
+{
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   border: 0px solid #000000;
+   border-radius: 0px;
+}
+#Section1-card-item6
+{
+   box-sizing: border-box;
+   margin: 0;
+   position: absolute;
+   left: 37.5%;
+   top: 38.9%;
+   height: auto;
+   width: 31.2%;
+   padding: 0;
+}
+#Section1-card-item6 img
+{
+   box-sizing: border-box;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: auto;
+   border: 0px solid #000000;
+   border-radius: 0px;
+}
+#wb_LayoutGrid2
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid2
+{
+   box-sizing: border-box;
+   padding: 50px 15px 50px 15px;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 1280px;
+}
+#LayoutGrid2 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid2 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid2:before,
+#LayoutGrid2:after,
+#LayoutGrid2 .row:before,
+#LayoutGrid2 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid2:after,
+#LayoutGrid2 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid2 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_LayoutGrid1
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid1
+{
+   box-sizing: border-box;
+   padding: 0 15px 0 15px;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 1280px;
+}
+#LayoutGrid1 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid1 > .row > .col-1, #LayoutGrid1 > .row > .col-2, #LayoutGrid1 > .row > .col-3
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid1 > .row > .col-1, #LayoutGrid1 > .row > .col-2, #LayoutGrid1 > .row > .col-3
+{
+   float: left;
+}
+#LayoutGrid1 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 16.66666667%;
+   text-align: left;
+}
+#LayoutGrid1 > .row > .col-2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 66.66666667%;
+   text-align: left;
+}
+#LayoutGrid1 > .row > .col-3
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 16.66666667%;
+   text-align: center;
+}
+#LayoutGrid1:before,
+#LayoutGrid1:after,
+#LayoutGrid1 .row:before,
+#LayoutGrid1 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid1:after,
+#LayoutGrid1 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid1 > .row > .col-1, #LayoutGrid1 > .row > .col-2, #LayoutGrid1 > .row > .col-3
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Heading1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   box-sizing: border-box;
+   vertical-align: top;
+   margin: 0 0 10px 0 ;
+   padding: 0;
+   text-align: center;
+}
+#Heading1
+{
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: bold;
+   font-style: normal;
+   font-size: 32px;
+   margin: 0;
+   text-align: center;
+   text-transform: none;
+}
+#wb_LayoutGrid3
+{
+   clear: both;
+   position: relative;
+   table-layout: fixed;
+   display: table;
+   text-align: center;
+   width: 100%;
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #CCCCCC;
+   border-radius: 0px;
+   box-sizing: border-box;
+   margin: 0;
+}
+#LayoutGrid3
+{
+   box-sizing: border-box;
+   padding: 50px 15px 50px 15px;
+   margin-right: auto;
+   margin-left: auto;
+   max-width: 1280px;
+}
+#LayoutGrid3 > .row
+{
+   margin-right: -15px;
+   margin-left: -15px;
+}
+#LayoutGrid3 > .row > .col-1
+{
+   box-sizing: border-box;
+   font-size: 0;
+   min-height: 1px;
+   padding-right: 15px;
+   padding-left: 15px;
+   position: relative;
+}
+#LayoutGrid3 > .row > .col-1
+{
+   float: left;
+}
+#LayoutGrid3 > .row > .col-1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #FFFFFF;
+   border-radius: 0px;
+   width: 100%;
+   text-align: center;
+}
+#LayoutGrid3:before,
+#LayoutGrid3:after,
+#LayoutGrid3 .row:before,
+#LayoutGrid3 .row:after
+{
+   display: table;
+   content: " ";
+}
+#LayoutGrid3:after,
+#LayoutGrid3 .row:after
+{
+   clear: both;
+}
+@media (max-width: 480px)
+{
+#LayoutGrid3 > .row > .col-1
+{
+   float: none;
+   width: 100% !important;
+}
+}
+#wb_Text1 
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 0;
+   margin: 0;
+   text-align: center;
+}
+#wb_Text1 div
+{
+   text-align: center;
+}
+#wb_Text1
+{
+   display: block;
+   margin: 0;
+   box-sizing: border-box;
+   width: 100%;
+}
+#wb_Heading2
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   box-sizing: border-box;
+   vertical-align: top;
+   margin: 0 0 10px 0 ;
+   padding: 0;
+   animation: clip-path-chevron-enter 2000ms linear 0ms infinite normal both;
+   text-align: center;
+}
+#Heading2
+{
+   color: #FFFF00;
+   font-family: Arial;
+   font-weight: bold;
+   font-style: normal;
+   font-size: 32px;
+   margin: 0;
+   text-align: center;
+   text-transform: none;
+}
+</style>
+<script src="js/vanilla-tilt.min.js"></script>
+<style>
+#Section1-card-item4 img
+{
+   border-radius: 50%;
+   box-shadow: 0 0 20px #87CEEB;
+}
+</style>
+<script src="js/wwb18_planets.js"></script>
 </head>
-<body data-bs-spy="scroll">
-<header id="PageHeader1">
-<div id="PageHeader1_Container">
-<nav id="wb_CssMenu1">
-<ul id="CssMenu1" role="menubar" class="nav">
-<li role="menuitem" class="nav-item firstmain"><a class="nav-link" href="#services" target="_self">About</a>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<div id="home">
-<div id="home-overlay"></div>
-<div id="home_Container">
-<div id="wb_down-arrow">
-<a href="#services"><div id="down-arrow"><i class="fa fa-angle-down"></i></div></a></div>
-
-<div id="wb_Heading1">
-<h1 id="Heading1">AVANTPART</h1></div>
-<div id="wb_Heading2">
-<h1 id="Heading2">COMING SOON . . .</h1></div>
-</div>
-</div>
-<div id="wb_services">
-<div id="services">
+<body>
+<div id="wb_LayoutGrid2">
+<div id="LayoutGrid2">
 <div class="row">
 <div class="col-1">
-<div id="wb_Heading4">
-<h1 id="Heading4">About US:</h1>
+<div id="wb_Heading1" style="display:block;width:100%;z-index:0;">
+<h1 id="Heading1">AVANTPART</h1>
+</div>
+<div id="wb_Heading2" style="display:block;width:100%;z-index:1;">
+<h1 id="Heading2">COMING SOON....</h1>
 </div>
 </div>
 </div>
@@ -49,14 +530,20 @@
 <div class="col-1">
 </div>
 <div class="col-2">
-<div id="wb_MaterialIcon2">
-<a href="./wb12_bluemonday.html"><div id="MaterialIcon2"><i class="MaterialIcon2"></i></div></a>
+<div id="wb_Section1" style="display:flex;width:100%;z-index:2;" class="card" data-3dtilt data-tilt-max="5">
+<div id="Section1-card-body">
+<div id="Section1-card-item0" data-mousetrack="33"><img src="paypal/planet1.png" width="245" height="258" alt="" title=""></div>
+<div id="Section1-card-item1" data-mousetrack="-14"><img src="paypal/planet2.png" width="222" height="224" alt="" title=""></div>
+<div id="Section1-card-item2" data-mousetrack="6"><img src="paypal/planet3.png" width="339" height="341" alt="" title=""></div>
+<div id="Section1-card-item3" data-mousetrack="-6"><img src="paypal/planet4.png" width="145" height="142" alt="" title=""></div>
+<div id="Section1-card-item4" data-mousetrack="-15"><img src="paypal/planet6.png" width="374" height="374" alt="" title=""></div>
+<div id="Section1-card-item5" data-mousetrack="-40"><img src="paypal/planet7.png" width="200" height="201" alt="" title=""></div>
+<div id="Section1-card-item6" data-mousetrack="20"><img src="paypal/planet5.png" width="354" height="355" alt="" title=""></div>
 </div>
-<div id="wb_ServicesText2">
-<span style="color:#FFFFFF;font-family:Arial;font-size:19px;"><strong><br></strong></span><span style="color:#FFFFFF;font-family:Arial;font-size:15px;"><br></span><span style="background-color:#048BB9;color:#FFFFFF;font-family:Arial;font-size:32px;"><strong>Avantpart</strong></span><span style="color:#FFFFFF;font-family:Arial;font-size:15px;">: <br>Pioneering Innovation in Modern Solutions – Your Gateway to Cutting-Edge Technology, Creative Design, and Seamless Experiences. Explore a World of Possibilities with Our Expertly Crafted Tools, Services, and Insights. Join Us on a Journey to Transform Ideas into Reality, Where Innovation Meets Excellence. Discover the Future Today with Avantpart – Redefining Boundaries, Inspiring Progress, and Empowering Success in Every Step. Let’s Build Tomorrow, Together.</span>
 </div>
 </div>
 <div class="col-3">
+
 </div>
 </div>
 </div>
@@ -65,22 +552,12 @@
 <div id="LayoutGrid3">
 <div class="row">
 <div class="col-1">
-</div>
-<div class="col-2">
-</div>
-<div class="col-3">
+<div id="wb_Text1">
+<span style="color:#FFFFFF;font-family:Arial;font-size:12px;">Images from pixabay.com</span>
 </div>
 </div>
 </div>
 </div>
-<div id="StickyLayer">
-<div id="wb_up-arrow">
-<a href="#home"><div id="up-arrow"><i class="fa fa-angle-up"></i></div></a></div>
 </div>
-<script src="jquery-1.12.4.min.js"></script>
-<script src="jquery-ui.min.js"></script>
-<script src="bootstrap.min.js"></script>
-<script src="wwb20.min.js"></script>
-<script src="wb12_bluemonday.js"></script>
 </body>
 </html>
