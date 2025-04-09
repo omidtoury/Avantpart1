@@ -115,10 +115,17 @@ body
    display: table;
    text-align: center;
    width: 100%;
+   background-clip: padding-box;
    background-color: #FFFFFF;
-   background-image: none;
-   border: 0px solid #CCCCCC;
-   border-radius: 0px;
+   background-image: url('../logo.svg');
+   background-repeat: no-repeat;
+   background-position: left center;
+   background-size: contain;
+   border: 0px solid #FFFFFF;
+   border-image-source: url('../logo.svg');
+   border-image-slice: 84 153 84 153;
+   border-image-width: 0px;
+   border-image-repeat: stretch;
    box-sizing: border-box;
    margin: 0;
 }
@@ -1275,7 +1282,7 @@ body
    padding: 0;
    margin: 0;
    position: absolute;
-   margin-left: -68px;
+   margin-left: -85px;
    left: 50%;
    vertical-align: middle;
    z-index: 999;
@@ -1388,12 +1395,20 @@ body
 #welcome-carousel .frame-1
 {
    background-color: #F4F5F9;
-   background-image: url('../images/719pbnsaMGL._AC_SL1283_.jpg');
+   background-image: url('../DALL·E 2025-04-08 21.38.04 - A luxurious and modern home interior banner, designed to promote stylish and practical household items that make life easier. The scene features a sun.webp');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
 }
 #welcome-carousel .frame-2
+{
+   background-color: transparent;
+   background-image: url('../images/25e6bb1ce7f8062f0592f4a8644e48e2.jpg');
+   background-repeat: space;
+   background-position: center center;
+   background-size: contain;
+}
+#welcome-carousel .frame-3
 {
    background-color: #F4F5F9;
    background-image: url('../images/61JbaBTvu1L._AC_SL1304_.jpg');
@@ -1401,20 +1416,21 @@ body
    background-position: center center;
    background-size: cover;
 }
-#welcome-carousel .frame-3
+#welcome-carousel .frame-4
+{
+   background-color: transparent;
+   background-image: url('../images/12da08b5392205e1b7e9aa619bb79365.jpg');
+   background-repeat: round;
+   background-position: center center;
+   background-size: contain;
+}
+#welcome-carousel .frame-5
 {
    background-color: #F4F5F9;
    background-image: url('../images/71GnrgWGk5L._AC_SL1224_.jpg');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
-}
-#welcome-carousel .frame-4
-{
-   background-color: transparent;
-   background-image: url('../images/photo_2025-03-03_15-33-31.jpg');
-   background-repeat: repeat;
-   background-position: left top;
 }
 @keyframes welcome-carousel-animation-show
 {
@@ -1482,36 +1498,6 @@ body
    padding: 0;
 }
 #wb_welcome-text6
-{
-   display: block;
-   margin: 0;
-   box-sizing: border-box;
-   width: 100%;
-}
-#wb_welcome-text1 
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #000000;
-   border-radius: 0px;
-   padding: 0 0 10px 0;
-   margin: 0;
-   text-align: center;
-}
-#wb_welcome-text1
-{
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: 400;
-   font-size: 21px;
-   line-height: 24.5px;
-}
-#wb_welcome-text1 p, #wb_welcome-text1 ul
-{
-   margin: 0;
-   padding: 0;
-}
-#wb_welcome-text1
 {
    display: block;
    margin: 0;
@@ -2971,8 +2957,8 @@ body
 {
    box-sizing: border-box;
    margin: 0;
-   border-top: 58px #FFFFFF solid;
-   border-width: 58px 0 0 0;
+   border-top: 25px #FFFFFF solid;
+   border-width: 25px 0 0 0;
    height: 0;
    line-height: 0;
 }
@@ -3090,30 +3076,6 @@ body
    margin: 0;
    box-sizing: border-box;
    width: 100%;
-}
-#wb_navigationHeading
-{
-   background-color: transparent;
-   background-image: none;
-   border-radius: 0px;
-   box-sizing: border-box;
-   vertical-align: top;
-   margin: 0;
-   padding: 0;
-   text-align: left;
-}
-#navigationHeading
-{
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: bold;
-   font-style: normal;
-   font-size: 32px;
-   margin: 0;
-   text-align: left;
-   text-transform: none;
-   -webkit-text-stroke: 1px #000000;
-   text-stroke: 1px #000000;
 }
 #wb_latestHeading
 {
@@ -3621,6 +3583,15 @@ body
 #Card1-card-item1
 {
    box-sizing: border-box;
+   margin: 0;
+   border-top: 25px #FFFFFF solid;
+   border-width: 25px 0 0 0;
+   height: 0;
+   line-height: 0;
+}
+#Card1-card-item2
+{
+   box-sizing: border-box;
    margin: 20px 10px 10px 10px;
    padding: 0;
    color: #000000;
@@ -3629,7 +3600,7 @@ body
    font-style: normal;
    font-size: 21px;
 }
-#Card1-card-item2
+#Card1-card-item3
 {
    display: inline-block;
    height: 35px;
@@ -3646,7 +3617,7 @@ body
    font-style: normal;
    font-size: 19px;
 }
-#Card1-card-item3
+#Card1-card-item4
 {
    box-sizing: border-box;
    margin: 12px 0 0 0 ;
@@ -3655,7 +3626,7 @@ body
    height: 0;
    line-height: 0;
 }
-#Card1-card-item4
+#Card1-card-item5
 {
    box-sizing: border-box;
    margin: 0 20px 20px 20px;
@@ -3666,7 +3637,7 @@ body
    font-style: normal;
    font-size: 13px;
 }
-#Card1-card-item5
+#Card1-card-item6
 {
    display: inline-block;
    height: 56px;
@@ -3686,7 +3657,149 @@ body
    font-size: 16px;
    text-align: center;
 }
-#Card1-card-item5 a
+#Card1-card-item6 a
+{
+   color: inherit;
+   text-decoration: none;
+}
+#wb_Card2
+{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   margin: 0 0 20px 0 ;
+   background-color: #FFFFFF;
+   background-image: none;
+   border: 1px solid #DEDEDE;
+   border-radius: 0px;
+   text-align: center;
+}
+#Card2-card-body
+{
+   padding: 0;
+   flex: 1 1 auto;
+   font-size: 0;
+}
+.stretched-link::after
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   pointer-events: auto;
+   content: "";
+   background-color: rgba(0,0,0,0);
+}
+#Card2-card-item0
+{
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   border: 0px solid #838383;
+   border-radius: 0px;
+   max-width: 100%;
+   width: 100%;
+   height: auto;
+}
+#Card2-card-item1
+{
+   box-sizing: border-box;
+   margin: 0;
+   border-top: 1px #FFFFFF solid;
+   border-width: 1px 0 0 0;
+   height: 0;
+   line-height: 0;
+}
+#Card2-card-item2
+{
+   box-sizing: border-box;
+   margin: 20px 10px 10px 10px;
+   padding: 0;
+   color: #000000;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 21px;
+}
+#Card2-card-item3
+{
+   display: inline-block;
+   height: 35px;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 8px 4px 8px 4px;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   background-color: transparent;
+   background-image: none;
+   color: #696969;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 19px;
+}
+#Card2-card-item4
+{
+   display: inline-block;
+   height: 35px;
+   box-sizing: border-box;
+   margin: 0;
+   padding: 8px 4px 8px 4px;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   background-color: transparent;
+   background-image: none;
+   color: #D9D9DA;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 19px;
+   text-decoration: line-through;
+}
+#Card2-card-item5
+{
+   box-sizing: border-box;
+   margin: 12px 0 0 0 ;
+   border-top: 1px #FFFFFF solid;
+   border-width: 1px 0 0 0;
+   height: 0;
+   line-height: 0;
+}
+#Card2-card-item6
+{
+   box-sizing: border-box;
+   margin: 0 20px 20px 20px;
+   padding: 0;
+   color: #696969;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 13px;
+}
+#Card2-card-item7
+{
+   display: inline-block;
+   height: 56px;
+   box-sizing: border-box;
+   align-self: center;
+   margin: 10px 0 1px 0 ;
+   width: 100%;
+   padding: 20px 0 20px 0;
+   border: 0px solid #4F4F4F;
+   border-radius: 0px;
+   background-color: #000000;
+   background-image: none;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: normal;
+   font-style: normal;
+   font-size: 16px;
+   text-align: center;
+}
+#Card2-card-item7 a
 {
    color: inherit;
    text-decoration: none;

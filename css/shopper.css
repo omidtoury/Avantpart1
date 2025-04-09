@@ -14,8 +14,20 @@ h1, .h1
    background-color: transparent;
    margin: 0 0 0 0;
    padding: 0 0 0 0;
-   word-wrap: break-word;
-   max-width: 100%;
+   .parallax-section {
+    background-image: url('your-image.jpg');
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 100vh;
+   }
+
+@media (max-width: 768px) {
+    .parallax-section {
+        background-attachment: scroll;
+   }
+};
 }
 h2, .h2
 {
