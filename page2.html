@@ -1,0 +1,387 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Page</title>
+<meta name="generator" content="WYSIWYG Web Builder 20 - http://www.wysiwygwebbuilder.com">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&display=swap" rel="stylesheet">
+<link href="css/shopper.css" rel="stylesheet">
+<link href="css/page2.css" rel="stylesheet">
+<script src="js/jquery-3.7.1.min.js"></script>
+<script src="js/jquery.ui.effect.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(event)
+{
+   var welcome_carousel = new bootstrap.Carousel('#welcome-carousel', {interval: 6000, pause: false});
+});
+</script>
+<script>
+$(document).ready(function()
+{
+   $("a[href*='#headerLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_headerLayoutGrid').offset().top }, 600, 'easeOutCirc');
+   });
+   $("a[href*='#navigationLayoutGrid']").click(function(event)
+   {
+      event.preventDefault();
+      $('html, body').stop().animate({ scrollTop: $('#wb_navigationLayoutGrid').offset().top }, 600, 'easeOutCirc');
+   });
+   paypal.minicart.render({
+   action: 'https://www.sandbox.paypal.com/cgi-bin/webscr',
+   styles: '@keyframes pop-in {    0% { opacity: 0; transform: scale(0.1); }    60% { opacity: 1; transform: scale(1.2); }    100% { transform: scale(1); }}@-webkit-keyframes pop-in {    0% { opacity: 0; -webkit-transform: scale(0.1); }    60% { opacity: 1; -webkit-transform: scale(1.2); }    100% { -webkit-transform: scale(1); }}@-moz-keyframes pop-in {    0% { opacity: 0; -moz-transform: scale(0.1); }    60% { opacity: 1; -moz-transform: scale(1.2); }    100% { -moz-transform: scale(1); }}.minicart-showing #PPMiniCart {    display: block;    transform: translateZ(0);    -webkit-transform: translateZ(0);    -moz-transform: translateZ(0);    animation: pop-in 0.25s;    -webkit-animation: pop-in 0.25s;    -moz-animation: pop-in 0.25s;}#PPMiniCart {    display: none;    position: fixed;    left: 50%;    top: 75px;}#PPMiniCart form {    position: relative;    width: 600px;    max-height: 400px;    margin-left: -300px;    padding: 10px 10px 40px;    background: #fbfbfb;    border: 1px solid #d7d7d7;    border-radius: 4px;    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);    font: 15px/normal arial, helvetica;    color: #333;}#PPMiniCart form.minicart-empty {    padding-bottom: 10px;    font-size: 16px;    font-weight: bold;}#PPMiniCart ul {    clear: both;    box-sizing: border-box;   float: left;    width: 100%;    margin: 5px 0 20px;    padding: 10px;    list-style-type: none;    background: transparent;    border: 0px solid #ccc; }#PPMiniCart .minicart-empty ul {    display: none;}#PPMiniCart .minicart-closer {    float: right;    margin: -12px -10px 0;    padding: 10px;    background: 0;    border: 0;    font-size: 18px;    cursor: pointer;    font-weight: bold;}#PPMiniCart .minicart-item {    clear: left;    padding: 6px 0;    min-height: 25px;}#PPMiniCart .minicart-item + .minicart-item {    border-top: 1px solid #f2f2f2;}#PPMiniCart .minicart-item a {    color: #333;    text-decoration: none;}#PPMiniCart .minicart-details-name {    float: left;    width: 62%;}#PPMiniCart .minicart-details-quantity {    float: left;    width: 15%;}#PPMiniCart .minicart-details-remove {    float: left;    width: 7%;}#PPMiniCart .minicart-details-price {    float: left;    width: 16%;    text-align: right;}#PPMiniCart .minicart-attributes {    margin: 0;    padding: 0;    background: transparent;    border: 0;    border-radius: 0;    box-shadow: none;    color: #999;    font-size: 12px;    line-height: 22px;}#PPMiniCart .minicart-attributes li {    display: inline;}#PPMiniCart .minicart-attributes li:after {    content: ",";}#PPMiniCart .minicart-attributes li:last-child:after {    content: "";}#PPMiniCart .minicart-quantity {    width: 30px;    height: 18px;    padding: 2px 4px;    border: 1px solid #ccc;    border-radius: 4px;    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);    font-size: 13px;    text-align: right;    transition: border linear 0.2s, box-shadow linear 0.2s;    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;}#PPMiniCart .minicart-quantity:hover {    border-color: #0078C1;}#PPMiniCart .minicart-quantity:focus {    border-color: #0078C1;    outline: 0;    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 3px rgba(0, 120, 193, 0.4);}#PPMiniCart .minicart-remove {    width: 18px;    height: 19px;    margin: 2px 0 0;    padding: 0;    background: #b7b7b7;    border: 1px solid #a3a3a3;    border-radius: 3px;    color: #fff;    font-size: 13px;    opacity: 0.70;    cursor: pointer;}#PPMiniCart .minicart-remove:hover {    opacity: 1;}#PPMiniCart .minicart-footer {    clear: left;}#PPMiniCart .minicart-subtotal {    position: absolute;    bottom: 17px;    padding-left: 6px;    left: 10px;    font-size: 16px;    font-weight: bold;}#PPMiniCart .minicart-submit {    position: absolute;    bottom: 10px;    right: 10px;    min-width: 100px;    height: auto;    margin-right: 6px;    padding: 10px 16px;    text-align: left;   border: 1px solid #ffc727;    border-radius: 5px;    color: #000;    cursor: pointer;    background: #ffaa00;} #PPMiniCart .minicart-logo { display: block; vertical-align: bottom; width: 65px; height: 21px; }#PPMiniCart form {    font-family: Arial;   font-size: 13px;   text-align: left;   border-color: rgba(34,34,34,0.16);   border-radius: 0px;   background-color: #FBFBFB;   color: #222222;   box-shadow: 2px 2px 10px rgba(0,0,0,0.50);}#PPMiniCart .minicart-submit { background: #FFC439;   border: 1px solid #FFC439;   border-radius: 0px;   font-size: 0.9em;   color: #000000;}#PPMiniCart .minicart-item a{   color: #222222;}#PPMiniCart .minicart-item + .minicart-item{   border-top: 1px solid rgba(34,34,34,0.08);}#PPMiniCart .minicart-attributes{   font-size: 0.75em;   color: #222222;   opacity: 0.60;}#PPMiniCart .minicart-remove{   border-radius: 50%;}#PPMiniCart .minicart-closer{   color: #222222;}#PPMiniCart .minicart-subtotal{   font-size: 1.0em;}#PPMiniCart .minicart-quantity, #PPMiniCart .minicart-quantity:hover{   border: 1px solid rgba(34,34,34,0.27);   font-size: 1.0em;   color: #222222;}',
+   template: '<%var items = cart.items();var settings = cart.settings();var hasItems = !!items.length;var priceFormat = { format: true, currency: cart.settings("currency_code") };var totalFormat = { format: true, showCode: true };%><form method="post" class="<% if (!hasItems) { %>minicart-empty<% } %>" action="<%= config.action %>" target="<%= config.target %>">    <% if (hasItems) { %><span class="minicart-header"><%= config.strings.header %></span><% } %><button type="button" class="minicart-closer">&times;</button>    <ul>        <% for (var i= 0, idx = i + 1, len = items.length; i < len; i++, idx++) { %>        <li class="minicart-item">            <div class="minicart-details-name">                <a class="minicart-name" href="<%= items[i].get("href") %>"><%= items[i].get("item_name") %></a>                <ul class="minicart-attributes">                    <% if (items[i].get("item_number")) { %>                    <li>                        <%= items[i].get("item_number") %>                        <input type="hidden" name="item_number_<%= idx %>" value="<%= items[i].get("item_number") %>" />                    </li>                    <% } %>                    <% if (items[i].discount()) { %>                    <li>                        <%= config.strings.discount %> <%= items[i].discount(priceFormat) %>                        <input type="hidden" name="discount_amount_<%= idx %>" value="<%= items[i].discount() %>" />                    </li>                    <% } %>                    <% for (var options = items[i].options(), j = 0, len2 = options.length; j < len2; j++) { %>                        <li>                            <%= options[j].key %>: <%= options[j].value %>                            <input type="hidden" name="on<%= j %>_<%= idx %>" value="<%= options[j].key %>" />                            <input type="hidden" name="os<%= j %>_<%= idx %>" value="<%= options[j].value %>" />                        </li>                    <% } %>                </ul>            </div>            <div class="minicart-details-quantity">                <input class="minicart-quantity" data-minicart-idx="<%= i %>" name="quantity_<%= idx %>" type="text" pattern="[0-9]*" value="<%= items[i].get("quantity") %>" autocomplete="off" />            </div>            <div class="minicart-details-remove">                <button type="button" class="minicart-remove" data-minicart-idx="<%= i %>">&times;</button>            </div>            <div class="minicart-details-price">                <span class="minicart-price"><%= items[i].total(priceFormat) %></span>            </div>            <input type="hidden" name="item_name_<%= idx %>" value="<%= items[i].get("item_name") %>" />            <input type="hidden" name="amount_<%= idx %>" value="<%= items[i].amount() %>" />            <input type="hidden" name="shipping_<%= idx %>" value="<%= items[i].get("shipping") %>" />            <input type="hidden" name="shipping2_<%= idx %>" value="<%= items[i].get("shipping2") %>" />        </li>        <% } %>    </ul>    <div class="minicart-footer">        <% if (hasItems) { %>            <div class="minicart-terms"> <input type="checkbox" id="minicart-terms-checkbox" name="terms"><%= config.strings.terms %></div> <div class="minicart-subtotal">                <%= config.strings.subtotal %> <%= cart.total(totalFormat) %>            </div>            <button class="minicart-submit" type="submit" data-minicart-alt="<%= config.strings.buttonAlt %>"><%- config.strings.button %><svg class="minicart-logo" width="100" height="32" viewBox="0 0 100 32" xmlns="http:&#x2F;&#x2F;www.w3.org&#x2F;2000&#x2F;svg" preserveAspectRatio="xMinYMin meet"><path fill="#003087" d="M 12 4.917 L 4.2 4.917 C 3.7 4.917 3.2 5.317 3.1 5.817 L 0 25.817 C -0.1 26.217 0.2 26.517 0.6 26.517 L 4.3 26.517 C 4.8 26.517 5.3 26.117 5.4 25.617 L 6.2 20.217 C 6.3 19.717 6.7 19.317 7.3 19.317 L 9.8 19.317 C 14.9 19.317 17.9 16.817 18.7 11.917 C 19 9.817 18.7 8.117 17.7 6.917 C 16.6 5.617 14.6 4.917 12 4.917 Z M 12.9 12.217 C 12.5 15.017 10.3 15.017 8.3 15.017 L 7.1 15.017 L 7.9 9.817 C 7.9 9.517 8.2 9.317 8.5 9.317 L 9 9.317 C 10.4 9.317 11.7 9.317 12.4 10.117 C 12.9 10.517 13.1 11.217 12.9 12.217 Z"></path><path fill="#003087" d="M 35.2 12.117 L 31.5 12.117 C 31.2 12.117 30.9 12.317 30.9 12.617 L 30.7 13.617 L 30.4 13.217 C 29.6 12.017 27.8 11.617 26 11.617 C 21.9 11.617 18.4 14.717 17.7 19.117 C 17.3 21.317 17.8 23.417 19.1 24.817 C 20.2 26.117 21.9 26.717 23.8 26.717 C 27.1 26.717 29 24.617 29 24.617 L 28.8 25.617 C 28.7 26.017 29 26.417 29.4 26.417 L 32.8 26.417 C 33.3 26.417 33.8 26.017 33.9 25.517 L 35.9 12.717 C 36 12.517 35.6 12.117 35.2 12.117 Z M 30.1 19.317 C 29.7 21.417 28.1 22.917 25.9 22.917 C 24.8 22.917 24 22.617 23.4 21.917 C 22.8 21.217 22.6 20.317 22.8 19.317 C 23.1 17.217 24.9 15.717 27 15.717 C 28.1 15.717 28.9 16.117 29.5 16.717 C 30 17.417 30.2 18.317 30.1 19.317 Z"></path><path fill="#003087" d="M 55.1 12.117 L 51.4 12.117 C 51 12.117 50.7 12.317 50.5 12.617 L 45.3 20.217 L 43.1 12.917 C 43 12.417 42.5 12.117 42.1 12.117 L 38.4 12.117 C 38 12.117 37.6 12.517 37.8 13.017 L 41.9 25.117 L 38 30.517 C 37.7 30.917 38 31.517 38.5 31.517 L 42.2 31.517 C 42.6 31.517 42.9 31.317 43.1 31.017 L 55.6 13.017 C 55.9 12.717 55.6 12.117 55.1 12.117 Z"></path><path fill="#009cde" d="M 67.5 4.917 L 59.7 4.917 C 59.2 4.917 58.7 5.317 58.6 5.817 L 55.5 25.717 C 55.4 26.117 55.7 26.417 56.1 26.417 L 60.1 26.417 C 60.5 26.417 60.8 26.117 60.8 25.817 L 61.7 20.117 C 61.8 19.617 62.2 19.217 62.8 19.217 L 65.3 19.217 C 70.4 19.217 73.4 16.717 74.2 11.817 C 74.5 9.717 74.2 8.017 73.2 6.817 C 72 5.617 70.1 4.917 67.5 4.917 Z M 68.4 12.217 C 68 15.017 65.8 15.017 63.8 15.017 L 62.6 15.017 L 63.4 9.817 C 63.4 9.517 63.7 9.317 64 9.317 L 64.5 9.317 C 65.9 9.317 67.2 9.317 67.9 10.117 C 68.4 10.517 68.5 11.217 68.4 12.217 Z"></path><path fill="#009cde" d="M 90.7 12.117 L 87 12.117 C 86.7 12.117 86.4 12.317 86.4 12.617 L 86.2 13.617 L 85.9 13.217 C 85.1 12.017 83.3 11.617 81.5 11.617 C 77.4 11.617 73.9 14.717 73.2 19.117 C 72.8 21.317 73.3 23.417 74.6 24.817 C 75.7 26.117 77.4 26.717 79.3 26.717 C 82.6 26.717 84.5 24.617 84.5 24.617 L 84.3 25.617 C 84.2 26.017 84.5 26.417 84.9 26.417 L 88.3 26.417 C 88.8 26.417 89.3 26.017 89.4 25.517 L 91.4 12.717 C 91.4 12.517 91.1 12.117 90.7 12.117 Z M 85.5 19.317 C 85.1 21.417 83.5 22.917 81.3 22.917 C 80.2 22.917 79.4 22.617 78.8 21.917 C 78.2 21.217 78 20.317 78.2 19.317 C 78.5 17.217 80.3 15.717 82.4 15.717 C 83.5 15.717 84.3 16.117 84.9 16.717 C 85.5 17.417 85.7 18.317 85.5 19.317 Z"></path><path fill="#009cde" d="M 95.1 5.417 L 91.9 25.717 C 91.8 26.117 92.1 26.417 92.5 26.417 L 95.7 26.417 C 96.2 26.417 96.7 26.017 96.8 25.517 L 100 5.617 C 100.1 5.217 99.8 4.917 99.4 4.917 L 95.8 4.917 C 95.4 4.917 95.2 5.117 95.1 5.417 Z"></path></svg></button>        <% } else { %>            <p class="minicart-empty-text"><%= config.strings.empty %></p>        <% } %>    </div>    <input type="hidden" name="cmd" value="_cart" />    <input type="hidden" name="upload" value="1" />    <% for (var key in settings) { %>        <input type="hidden" name="<%= key %>" value="<%= settings[key] %>" />    <% } %></form>',
+   strings: {
+      button: 'Check Out with ',
+      header: 'Your Order',
+      terms: 'I have read and agree to the Terms & Conditions',
+      subtotal: 'Total:',
+      discount: 'Discount:',
+      empty: 'Your shopping cart is empty'}
+   });
+   paypal.minicart.view.bindForms();
+   $('#PayPalShoppingCart1').click(function(e)
+   {
+      e.stopPropagation();
+      paypal.minicart.view.show();
+      paypal.minicart.view.redraw();
+   });
+   function updatePayPalCart(product)
+   {
+      var total = 0;
+      var cartItems = paypal.minicart.cart.items();
+      var weight, quantity, totalWeight = 0;
+      var shippingBaseFee = 20$;
+      var shippingFeePerUnit = 0.0;
+      var shippingTitle = "Shipping and Handling";
+      var shippingDescription = "";
+      var i;
+      if (product !== undefined && product.get('item_name') == shippingTitle)
+      {
+         return 0;
+      }
+      for (i=0; i<cartItems.length; i++)
+      {
+         if (cartItems[i].get('item_name') == shippingTitle) 
+         {
+            paypal.minicart.cart.remove(i);
+         }
+      }
+      $('#PPMiniCart').removeClass('has-shipping');
+      cartItems.forEach(function(item) 
+      {
+         total += item._data.quantity;
+      });
+      $('#PayPalShoppingCart1-badge').text(total);
+      if (total > 0)
+      {
+         $('#PayPalShoppingCart1-badge').show();
+      }
+      else
+      {
+         $('#PayPalShoppingCart1-badge').hide();
+      }
+      for (i = 0; i < cartItems.length; i++)
+      {
+         quantity = parseFloat(cartItems[i].get('quantity'));
+         weight = parseFloat(cartItems[i].get('shipping_weight'));
+         totalWeight += (quantity * weight);
+      }
+      var shippingCosts = shippingBaseFee + totalWeight * shippingFeePerUnit;
+      if (totalWeight <= 0) 
+      {
+         shippingCosts = 0.00;
+      }
+      else
+      {
+         shippingCosts = shippingCosts.toFixed(2);
+      }
+      if (shippingCosts != 0.00)
+      {
+         var shippingItem = {
+            "amount": shippingCosts,
+            "item_name": shippingTitle,
+            "item_number": shippingDescription
+         };
+         var isShowing = paypal.minicart.view.isShowing;
+         paypal.minicart.view.isShowing = true;
+         paypal.minicart.cart.add(shippingItem);
+         paypal.minicart.view.isShowing = isShowing;
+         $('#PPMiniCart').addClass('has-shipping');
+      }
+   }
+   updatePayPalCart();
+   paypal.minicart.cart.on('add', function(idx, product, isExisting)
+   {
+      updatePayPalCart(product);
+   });
+   paypal.minicart.cart.on('remove', function(idx, product)
+   {
+      updatePayPalCart(product);
+   });
+   paypal.minicart.cart.on('change', function()
+   {
+      updatePayPalCart();
+   });
+   paypal.minicart.cart.on('checkout', function (evt)
+   {
+      var hasAgreed = !!document.getElementById('minicart-terms-checkbox').checked;
+      if (!hasAgreed) 
+      {
+         alert('You must agree to the terms!');
+         evt.preventDefault();
+      }
+   });
+   $('body').on('click','[data-ecommerce-platform="paypal"]', function(e)
+   {
+      e.preventDefault();
+      e.stopPropagation();
+      paypal.minicart.cart.add(
+      {
+         amount: $(this).attr('data-amount'),
+         business: $(this).attr('data-business'),
+         currency_code: $(this).attr('data-currency-code'),
+         item_name: $(this).attr('data-item-name'),
+         item_number: $(this).attr('data-item-number'),
+         shipping: $(this).attr('data-shipping'),
+         shipping2: $(this).attr('data-shipping2'),
+         handling_cart: $(this).attr('data-handling'),
+         no_shipping: $(this).attr('data-no_shipping'),
+         quantity: $(this).attr('data-quantity') ? $(this).attr('data-quantity') : 1,
+         shipping_weight: $(this).attr('data-weight'),
+         return: $(this).attr('data-success-url'),
+         cancel_return: $(this).attr('data-cancel-url')
+      });
+   });
+});
+</script>
+</head>
+<body>
+<div id="wb_headerLayoutGrid">
+<div id="headerLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_headerBreadcrumb" style="display:inline-block;width:149px;height:31px;z-index:0;vertical-align:top;">
+<ul id="headerBreadcrumb">
+<li><a href=""><i class="fa fa-envelope-square"></i>Info@avanpart.com</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-2">
+<div id="wb_headerIcon1" style="display:inline-block;width:20px;height:20px;text-align:center;z-index:1;">
+<div id="headerIcon1"><i class="fa fa-linkedin-square"></i></div>
+</div>
+<div id="wb_headerIcon2" style="display:inline-block;width:20px;height:20px;text-align:center;z-index:2;">
+<div id="headerIcon2"><i class="fa fa-twitter"></i></div>
+</div>
+<div id="wb_headerIcon3" style="display:inline-block;width:20px;height:20px;text-align:center;z-index:3;">
+<div id="headerIcon3"><i class="fa fa-facebook"></i></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_navigationLayoutGrid">
+<div id="navigationLayoutGrid">
+<div class="row">
+<div class="col-1">
+</div>
+<div class="col-2">
+<div id="wb_navigationMenu" style="display:block;width:100%;z-index:4;vertical-align:top;">
+<ul id="navigationMenu">
+<li><a href="./index.html#headerLayoutGrid">Home</a></li>
+<li><a href="./index.html#latestLayoutGrid1">New</a></li>
+<li><a href="./index.html#bestSellersLayoutGrid" rel="nofollow">Product</a></li>
+<li><a href="./index.html#LayoutGrid1About" title="About">About</a></li>
+</ul>
+
+</div>
+</div>
+<div class="col-3">
+<div id="wb_PayPalShoppingCart1" style="display:inline-block;width:23px;height:32px;text-align:center;z-index:5;">
+<svg id="PayPalShoppingCart1" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <path d="M700 787 C720 768, 742 758, 768 758 C794 758, 817 768, 835 787 C854 807, 864 829, 864 854 C864 879, 854 901, 835 920 C817 939, 794 948, 768 948 C742 948, 720 939, 700 920 C681 902, 672 880, 672 854 C672 829, 681 806, 700 787 Z M74 76 L231 76 L271 160 L896 160 C911 160, 924 165, 934 176 C944 187, 949 200, 950 214 C949 216, 947 224, 943 238 L790 515 C772 548, 744 564, 706 564 L395 564 L361 628 L360 631 C360 630, 359 630, 358 630 L864 630 L864 736 L340 736 C314 736, 292 726, 273 707 C255 688, 246 666, 246 640 C246 625, 249 610, 257 595 L314 494 L163 180 L74 180Z  M273 787 C292 768, 314 758, 340 758 C366 758, 389 768, 408 787 C428 807, 438 829, 438 854 C438 879, 428 901, 408 920 C389 939, 366 948, 340 948 C314 948, 292 939, 273 920 C255 902, 246 880, 246 854 C246 829, 255 806, 273 787"/>
+</svg>
+
+<span id="PayPalShoppingCart1-badge">0</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_bestSellerLayoutGrid">
+<div id="bestSellerLayoutGrid">
+<div class="col-1">
+</div>
+<div class="col-2">
+<div id="wb_welcome-carousel" style="">
+<div id="welcome-carousel" class="carousel slide" data-bs-ride="carousel">
+<ol class="carousel-indicators">
+<li data-bs-target="#welcome-carousel" data-bs-slide-to="0" class="active"></li>
+<li data-bs-target="#welcome-carousel" data-bs-slide-to="1"></li>
+<li data-bs-target="#welcome-carousel" data-bs-slide-to="2"></li>
+<li data-bs-target="#welcome-carousel" data-bs-slide-to="3"></li>
+</ol>
+<div class="carousel-inner">
+<div class="carousel-item frame-1 active">
+<div class="carousel-item-inner">
+<div id="wb_welcome-text1">
+<p>NEW INSPIRATION 2025</p>
+<p style="font-size:13px;line-height:16px;">&nbsp;</p>
+</div>
+<div id="wb_welcome-text2">
+<p style="font-size:13px;line-height:16px;">&nbsp;</p>
+</div>
+</div>
+</div>
+<div class="carousel-item frame-2">
+<div class="carousel-item-inner">
+</div>
+</div>
+<div class="carousel-item frame-3">
+<div class="carousel-item-inner">
+<div id="wb_welcome-text3">
+<p>NEW INSPIRATION 2025</p>
+</div>
+<div id="wb_welcome-text4">
+<p style="font-size:27px;line-height:30px;font-weight:bold;">&nbsp;</p>
+</div>
+</div>
+</div>
+<div class="carousel-item frame-4">
+<div class="carousel-item-inner">
+</div>
+</div>
+</div>
+<a class="carousel-item-start carousel-control" href="#welcome-carousel" role="button" data-bs-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span>
+</a>
+<a class="carousel-item-end carousel-control" href="#welcome-carousel" role="button" data-bs-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span>
+</a>
+</div>
+</div>
+
+</div>
+<div class="col-3">
+</div>
+</div>
+</div>
+<div id="wb_LayoutGrid1">
+<div id="LayoutGrid1">
+<div class="col-1">
+<div id="wb_Card1" style="display:flex;width:100%;z-index:15;" class="card">
+<div id="Card1-card-body">
+<img id="Card1-card-item0" src="images/41TnQ2PLDXL._AC_SL1302_.jpg" width="1000" height="1000" alt="Nut Opener" title="Nut Opener">
+<div id="Card1-card-item1">Nut Opener</div>
+<div id="Card1-card-item2">$15.99</div>
+<hr id="Card1-card-item3">
+<div id="Card1-card-item4"></div>
+</div>
+<div id="Card1-card-item5" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Nut Opener" data-item-number="SKU0001" data-amount="15.99" data-currency-code="USD" data-success-url="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN/" data-cancel-url="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN/" data-cmd="_cart"><a href="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN" title="Buy Now" class="stretched-link">Buy Now</a></div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_Text1">
+<p>STAINLESS STEEL build made from heavy duty 304 stainless steel that resists rust, corrosion and tarnishing, guaranteeing long-lasting performance whether you're cracking walnuts daily or using occasionally for holiday preparations.</p>
+<br>
+<p>NUT CRACKERS for all nuts for macadamias, walnuts and pecans, smart pressure system cracks tough shells perfectly while keeping kernels whole. Stainless steel lever mechanism, macadamia nut cracker and nut crackers for pecans. </p>
+<br>
+<p>NUTCRACKER SETS with picks professionally designed with a contoured grip and needle sharp point to carefully pry out intact walnut, pecan and macadamia kernels from their shells without leaving behind sharp fragments or damaging the meat.&nbsp; </p>
+<br>
+<p>KITCHEN GADGETS this versatile nut cracker tool features a built in hanging hook for compact storage in kitchens, RVs, or campers, keeping your cooking area organized while remaining instantly accessible for cracking walnuts, pecans, and more.&nbsp; </p>
+<br>
+<p>SEAFOOD TOOLS transitions seamlessly from cracking walnuts to shucking oysters, with a corrosion resistant stainless steel construction that withstands saltwater exposure while providing superior leverage for stubborn shells.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_serviceLayoutGrid">
+<div id="serviceLayoutGrid">
+<div class="row">
+<div class="col-1">
+<div id="wb_serviceCard1" style="display:inline-block;width:212px;height:67px;z-index:17;" class="card">
+<div id="serviceCard1-card-body">
+<div id="serviceCard1-card-item0"><a href="#"><i class="fa fa-truck"></i></a></div>
+<div id="serviceCard1-card-item1"><a href="http://">Shipping</a></div>
+</div>
+</div>
+</div>
+<div class="col-2">
+<div id="wb_serviceCard2" style="display:inline-block;width:203px;height:67px;z-index:18;" class="card">
+<div id="serviceCard2-card-body">
+<div id="serviceCard2-card-item0"><a href="#"><i class="fa fa-envelope-o"></i></a></div>
+<div id="serviceCard2-card-item1"><a href="http://">Contact us 24/7</a></div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_serviceCard3" style="display:inline-block;width:209px;height:67px;z-index:19;" class="card">
+<div id="serviceCard3-card-body">
+<div id="serviceCard3-card-item0"><a href="#"><i class="fa fa-sign-out"></i></a></div>
+<div id="serviceCard3-card-item1"><a href="http://">30 Days Return</a></div>
+</div>
+</div>
+</div>
+<div class="col-4">
+<div id="wb_serviceCard4" style="display:inline-block;width:209px;height:67px;z-index:20;" class="card">
+<div id="serviceCard4-card-body">
+<div id="serviceCard4-card-item0"><a href="#"><i class="fa fa-lock"></i></a></div>
+<div id="serviceCard4-card-item1"><a href="http://">Secure Payments</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="wb_links">
+<div id="links-overlay"></div>
+<div id="links">
+<div class="row">
+<div class="col-1">
+<div id="wb_linksText1">
+<span style="color:#FFFFFF;"><strong>AVANTPART</strong></span>
+</div>
+<div id="wb_contactAddress">
+<p>Email: info@avantpart.com</p>
+</div>
+<div id="wb_contactIcon1" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:23;">
+<a href="./index.html"><div id="contactIcon1"><i class="fa fa-linkedin-square"></i></div></a>
+</div>
+<div id="wb_contactIcon2" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:24;">
+<a href="./index.html"><div id="contactIcon2"><i class="fa fa-facebook-official"></i></div></a>
+</div>
+<div id="wb_contactIcon3" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:25;">
+<a href="./index.html"><div id="contactIcon3"><i class="fa fa-twitter"></i></div></a>
+</div>
+<div id="wb_contactIcon4" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:26;">
+<a href="./index.html"><div id="contactIcon4"><i class="fa fa-youtube-play"></i></div></a>
+</div>
+</div>
+<div class="col-2">
+</div>
+<div class="col-3">
+</div>
+<div class="col-4">
+</div>
+</div>
+</div>
+</div>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script><script src="js/minicart.min.js"></script>
+</body>
+</html>
