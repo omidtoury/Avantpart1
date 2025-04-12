@@ -522,7 +522,6 @@ body
    width: 100%;
    height: 100%;
    position: relative;
-   perspective: 1200px;
 }
 .carousel.pointer-event
 {
@@ -544,11 +543,17 @@ body
    margin-right: -100%;
    -webkit-backface-visibility: hidden;
    backface-visibility: hidden;
-   transform: translate3d(0, 0, 0);
-   transform-style: preserve-3d;
-   transition: opacity 500ms ease-in-out;
+   transition: transform 500ms ease-in-out;
    height: 100%;
    text-align: center;
+}
+#welcome-carousel .carousel-item-next:not(.carousel-item-start), #welcome-carousel .active.carousel-item-end
+{
+   transform: translateX(100%);
+}
+#welcome-carousel .carousel-item-prev:not(.carousel-item-end), #welcome-carousel .active.carousel-item-start
+{
+   transform: translateX(-100%);
 }
 #welcome-carousel .carousel-item-inner
 {
@@ -569,23 +574,11 @@ body
 {
    display: block;
 }
-#welcome-carousel .carousel-inner > .active
-{
-   animation: welcome-carousel-animation-show 500ms ease 0ms both;
-}
 #welcome-carousel .carousel-inner > .carousel-item-next, #welcome-carousel .carousel-inner > .carousel-item-prev
 {
    position: absolute;
    top: 0;
    width: 100%;
-}
-#welcome-carousel .carousel-inner > .carousel-item-next.carousel-item-start, #welcome-carousel .carousel-inner > .carousel-item-prev.carousel-item-end
-{
-   animation: welcome-carousel-animation-show 500ms ease 0ms both;
-}
-#welcome-carousel .carousel-inner > .active.carousel-item-start, #welcome-carousel .carousel-inner > .active.carousel-item-end
-{
-   animation: welcome-carousel-animation-hide 500ms ease both;
 }
 #welcome-carousel .carousel-indicators
 {
@@ -609,7 +602,7 @@ body
    cursor: pointer;
    text-indent: -999px;
    border-radius: 50%;
-   background-color: rgba(255,255,255,1.00);
+   background-color: rgba(0,0,0,1.00);
    border: 1px solid rgba(255,255,255,1.00);
    transform: scale(0.4);
    transition: transform 0.3s ease, background-color 0.3s ease;
@@ -634,7 +627,6 @@ body
    width: 15%;
    text-align: center;
    opacity: 0.5;
-   transition: opacity 0.3s ease;
    cursor: pointer;
    z-index: 7778;
 }
@@ -680,7 +672,6 @@ body
    cursor: pointer;
    text-align: center;
    opacity: 0.5;
-   transition: opacity 0.3s ease;
 }
 #welcome-carousel .carousel-control-next-icon, #welcome-carousel .carousel-control-prev-icon
 {
@@ -698,9 +689,17 @@ body
 }
 #welcome-carousel .carousel-control-prev-icon
 {
+   background: url('data:image/svg+xml,%3csvg%20style%3d%22fill:%23000000%22%20viewBox%3d%220%200%20168%20168%22%20version%3d%221.1%22%20xmlns%3d%22http://www.w3.org/2000/svg%22%3e%0d%0a%20%20%20%3cpath%20d%3d%22M112%2042%20C113%2043%2c%20113%2044%2c%20113%2045%20C113%2047%2c%20113%2048%2c%20112%2049%20L75%2084%20L112%20120%20C113%20121%2c%20113%20122%2c%20113%20123%20C113%20125%2c%20113%20126%2c%20112%20127%20L107%20131%20C106%20132%2c%20105%20133%2c%20104%20133%20C102%20133%2c%20101%20132%2c%20100%20131%20L57%2088%20C56%2087%2c%2055%2086%2c%2055%2084%20C55%2083%2c%2056%2082%2c%2057%2081%20L100%2037%20C101%2036%2c%20102%2036%2c%20104%2036%20C105%2036%2c%20106%2036%2c%20107%2037%22/%3e%0d%0a%3c/svg%3e%0d%0a') no-repeat center center;
+}
+#welcome-carousel .carousel-control:hover .carousel-control-prev-icon
+{
    background: url('data:image/svg+xml,%3csvg%20style%3d%22fill:%23FFFFFF%22%20viewBox%3d%220%200%20168%20168%22%20version%3d%221.1%22%20xmlns%3d%22http://www.w3.org/2000/svg%22%3e%0d%0a%20%20%20%3cpath%20d%3d%22M112%2042%20C113%2043%2c%20113%2044%2c%20113%2045%20C113%2047%2c%20113%2048%2c%20112%2049%20L75%2084%20L112%20120%20C113%20121%2c%20113%20122%2c%20113%20123%20C113%20125%2c%20113%20126%2c%20112%20127%20L107%20131%20C106%20132%2c%20105%20133%2c%20104%20133%20C102%20133%2c%20101%20132%2c%20100%20131%20L57%2088%20C56%2087%2c%2055%2086%2c%2055%2084%20C55%2083%2c%2056%2082%2c%2057%2081%20L100%2037%20C101%2036%2c%20102%2036%2c%20104%2036%20C105%2036%2c%20106%2036%2c%20107%2037%22/%3e%0d%0a%3c/svg%3e%0d%0a') no-repeat center center;
 }
 #welcome-carousel .carousel-control-next-icon
+{
+   background: url('data:image/svg+xml,%3csvg%20style%3d%22fill:%23000000%22%20viewBox%3d%220%200%20168%20168%22%20version%3d%221.1%22%20xmlns%3d%22http://www.w3.org/2000/svg%22%3e%0d%0a%20%20%20%3cpath%20d%3d%22M112%2081%20C113%2082%2c%20113%2083%2c%20113%2084%20C113%2086%2c%20113%2087%2c%20112%2088%20L68%20131%20C67%20132%2c%2066%20133%2c%2065%20133%20C63%20133%2c%2062%20132%2c%2061%20131%20L57%20127%20C56%20126%2c%2055%20125%2c%2055%20123%20C55%20122%2c%2056%20121%2c%2057%20120%20L93%2084%20L57%2049%20C56%2048%2c%2055%2047%2c%2055%2045%20C55%2044%2c%2056%2043%2c%2057%2042%20L61%2037%20C62%2036%2c%2063%2036%2c%2065%2036%20C66%2036%2c%2067%2036%2c%2068%2037%22/%3e%0d%0a%3c/svg%3e%0d%0a') no-repeat center center;
+}
+#welcome-carousel .carousel-control:hover .carousel-control-next-icon
 {
    background: url('data:image/svg+xml,%3csvg%20style%3d%22fill:%23FFFFFF%22%20viewBox%3d%220%200%20168%20168%22%20version%3d%221.1%22%20xmlns%3d%22http://www.w3.org/2000/svg%22%3e%0d%0a%20%20%20%3cpath%20d%3d%22M112%2081%20C113%2082%2c%20113%2083%2c%20113%2084%20C113%2086%2c%20113%2087%2c%20112%2088%20L68%20131%20C67%20132%2c%2066%20133%2c%2065%20133%20C63%20133%2c%2062%20132%2c%2061%20131%20L57%20127%20C56%20126%2c%2055%20125%2c%2055%20123%20C55%20122%2c%2056%20121%2c%2057%20120%20L93%2084%20L57%2049%20C56%2048%2c%2055%2047%2c%2055%2045%20C55%2044%2c%2056%2043%2c%2057%2042%20L61%2037%20C62%2036%2c%2063%2036%2c%2065%2036%20C66%2036%2c%2067%2036%2c%2068%2037%22/%3e%0d%0a%3c/svg%3e%0d%0a') no-repeat center center;
 }
@@ -735,16 +734,6 @@ body
    background-repeat: round;
    background-position: center center;
    background-size: contain;
-}
-@keyframes welcome-carousel-animation-show
-{
-   0%   { transform: translateX(100%); }
-   100% { transform: translateX(0); }
-}
-@keyframes welcome-carousel-animation-hide
-{
-   0%   { transform: translateX(0); }
-   100% { transform: translateX(-100%); }
 }
 #wb_welcome-text1 
 {
