@@ -3435,7 +3435,13 @@ body
 }
 #wb_Text3 
 {
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #000000;
+   border-radius: 0px;
+   padding: 5px 0 0 0;
    margin: 0;
+   text-align: center;
 }
 #wb_Text3
 {
@@ -3450,10 +3456,10 @@ body
 }
 #wb_Text3
 {
-   display: inline-block;
+   display: block;
    margin: 0;
-   width: 940px;
-   height: 138px;
+   box-sizing: border-box;
+   width: 100%;
 }
 #wb_Card1
 {
