@@ -111,7 +111,10 @@ body
 #wb_navigationLayoutGrid
 {
    clear: both;
-   position: relative;
+   position: -webkit-sticky;
+   position: sticky;
+   top: 0;
+   z-index: 7776;
    table-layout: fixed;
    display: table;
    text-align: center;
