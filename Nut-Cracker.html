@@ -1,65 +1,14 @@
 <!doctype html>
 <html>
 <head>
-
-Inverter Air Conditioner Bestcold 12000 BTU – High Efficiency Cooling and Heating, Operates Efficiently Even at Extreme Cold Temperatures Down to -30°C, Ideal for Montréal’s Harsh Winters
 <meta charset="utf-8">
-<title> 12000 BTU Inverter AC Heating to (Heating Pump) -30°C </title>
-<meta name="description" content="12000 BTU mini split air conditioner & heat pump provides powerful cooling/heating. Energy-efficient, wall-mounted AC with Wi-Fi control.">
-<meta name="keywords" content="air conditioner
-heat pump
-mini ac
-mini air conditioner
-small air conditioner
-room ac
-wall air conditioner
-mini split heat pump
-thermopompe
-wall mounted air conditioner
-senville
-mini split
-mini split air conditioner
-ductless air conditioner
-split air conditioner
-climatiseur mural
-senville 18000 btu
-senville heat pump
-heat pumps
-thermopompe 12000 btu
-senville 12000 btu
-air climatisé
-split
-mini portable air pump
-portable air conditioning unit
-heat pumps made for canada
-thermopompe 18000 btu
-heatpump
-thermo pompe">
-<meta name="author" content="Avant Part">
-<meta name="categories" content="Heating & Cooling">
-<meta name="robots" content="index, follow">
-<meta name="revisit-after" content="7 days">
-<meta property="og:title" content="Bestcold 12000 BTU Inverter – Heats Down to -30°C ">
-<meta property="og:description" content="
-Stay warm even at -30°C! The Bestcold 12000 BTU Inverter AC delivers powerful heating and cooling for year-round comfort in Montréal. Quiet, efficient, and built for Canadian winter">
-<meta property="og:type" content="product">
-<meta property="og:image" content="images/25e6bb1ce7f8062f0592f4a8644e48e2.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bestcold 12000 BTU Inverter – Heats Down to -30°C">
-<meta name="twitter:description" content="
-Stay warm even at -30°C! The Bestcold 12000 BTU Inverter AC delivers powerful heating and cooling for year-round comfort in Montréal. Quiet, efficient, and built for Canadian winter">
-<meta name="twitter:image" content="images/25e6bb1ce7f8062f0592f4a8644e48e2.jpg">
-<meta name="twitter:image:alt" content="
-Bestcold 12000 BTU Inverter Air Conditioner – Heating & Cooling up to -30°C – Wall Mounted Unit – Energy Efficient – Ideal for Montréal Climate
-
-">
+<title>Untitled Page</title>
 <meta name="generator" content="WYSIWYG Web Builder 20 - http://www.wysiwygwebbuilder.com">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="" hreflang="en-us" rel="alternate">
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&display=swap" rel="stylesheet">
 <link href="css/shopper.css" rel="stylesheet">
-<link href="css/12000btu-air-conditioner.css" rel="stylesheet">
+<link href="css/Nut-Cracker.css" rel="stylesheet">
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/jquery.ui.effect.min.js"></script>
 <script src="js/wb.parallax.min.js"></script>
@@ -76,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function(event)
 <script>
 $(document).ready(function()
 {
-   $('#wb_Card2').addClass('visibility-hidden');
+   $('#wb_Card1').addClass('visibility-hidden');
    $('#wb_list14Card').addClass('visibility-hidden');
    $("a[href*='#headerLayoutGrid']").click(function(event)
    {
@@ -90,29 +39,29 @@ $(document).ready(function()
    });
    $('#wb_bestSellerLayoutGrid').parallax();
    $('#wb_LayoutGrid1').parallax();
-   function onScrollCard2()
+   function onScrollCard1()
    {
-      var $obj = $("#wb_Card2");
+      var $obj = $("#wb_Card1");
       if (!$obj.hasClass("in-viewport") && $obj.inViewPort(true))
       {
          $obj.addClass("in-viewport");
-         AnimateCss('wb_Card2', 'slide-left-in', 0, 1250);
+         AnimateCss('wb_Card1', 'slide-left-in', 0, 1250);
       }
       else
       if ($obj.hasClass("in-viewport") && !$obj.inViewPort(true))
       {
          $obj.removeClass("in-viewport");
-         AnimateCss('wb_Card2', 'animate-fade-out', 0, 0);
+         AnimateCss('wb_Card1', 'animate-fade-out', 0, 0);
       }
    }
-   if (!$('#wb_Card2').inViewPort(true))
+   if (!$('#wb_Card1').inViewPort(true))
    {
-      $('#wb_Card2').addClass("in-viewport");
+      $('#wb_Card1').addClass("in-viewport");
    }
-   onScrollCard2();
+   onScrollCard1();
    $(window).scroll(function(event)
    {
-      onScrollCard2();
+      onScrollCard1();
    });
    function onScrolllist14Card()
    {
@@ -120,7 +69,7 @@ $(document).ready(function()
       if (!$obj.hasClass("in-viewport") && $obj.inViewPort(true))
       {
          $obj.addClass("in-viewport");
-         AnimateCss('wb_list14Card', 'slide-right-in', 100, 1250);
+         AnimateCss('wb_list14Card', 'slide-right-in', 0, 1250);
       }
       else
       if ($obj.hasClass("in-viewport") && !$obj.inViewPort(true))
@@ -143,17 +92,51 @@ $(document).ready(function()
       skrollr.init({forceHeight: false, mobileCheck: function() { return false; }, smoothScrolling: false});
    }
    skrollrInit();
+   $('body').on('click','[data-ecommerce-platform="paypal"]', function(e)
+   {
+      e.preventDefault();
+      var url = "https://www.paypal.com/cgi-bin/webscr?add=1&cmd=";
+      url += $(this).attr('data-cmd');
+      url += "&business=";
+      url += encodeURIComponent($(this).attr('data-business'));
+      url += "&item_name=";
+      url += encodeURIComponent($(this).attr('data-item-name'));
+      url += "&item_number=";
+      url += encodeURIComponent($(this).attr('data-item-number'));
+      url += "&amount=";
+      url += encodeURIComponent($(this).attr('data-amount'));
+      url += "&currency_code=";
+      url += encodeURIComponent($(this).attr('data-currency-code'));
+      if ($(this).attr('data-quantity'))
+      {
+         url += "&quantity=";
+         url += encodeURIComponent($(this).attr('data-quantity'));
+      }
+      url += "&shipping=";
+      url += encodeURIComponent($(this).attr('data-shipping'));
+      url += "&shipping2=";
+      url += encodeURIComponent($(this).attr('data-shipping2'));
+      url += "&handling=";
+      url += encodeURIComponent($(this).attr('data-handling'));
+      url += "&no_shipping=";
+      url += encodeURIComponent($(this).attr('data-no_shipping'));
+      url += "&return=";
+      url += encodeURIComponent($(this).attr('data-success-url'));
+      url += "&cancel_return=";
+      url += encodeURIComponent($(this).attr('data-cancel-url'));
+      window.open(url, '_click');
+   });
 });
 </script>
 <link rel="icon" type="image/png" href="favicon.png">
-<!-- Insert Google Analytics code here -->
+
 </head>
 <body>
 <div id="wb_headerLayoutGrid">
 <div id="headerLayoutGrid">
 <div class="row">
 <div class="col-1">
-<div id="wb_headerBreadcrumb" style="display:inline-block;width:455px;height:31px;z-index:0;vertical-align:top;">
+<div id="wb_headerBreadcrumb" style="display:inline-block;width:149px;height:31px;z-index:0;vertical-align:top;">
 <ul id="headerBreadcrumb">
 <li><a href=""><i class="fa fa-envelope-square"></i>Info@avanpart.com</a></li>
 </ul>
@@ -259,23 +242,21 @@ $(document).ready(function()
 <div id="wb_LayoutGrid1">
 <div id="LayoutGrid1">
 <div class="col-1">
-<div id="wb_Card2" style="display:flex;width:100%;z-index:15;" class="card">
-<div id="Card2-card-body">
-<img id="Card2-card-item0" src="images/25e6bb1ce7f8062f0592f4a8644e48e2.jpg" width="1000" height="1000" alt="Mini Split Air Conditione" title="Mini Split Air Conditioner 12000 BTU With-30°C Heating Pump">
-<hr id="Card2-card-item1">
-<div id="Card2-card-item2">Mini Split Air Conditioner 12000 BTU With-30°C Heating Pump</div>
-<div id="Card2-card-item3">$1599</div>
-<div id="Card2-card-item4">$1899</div>
-<hr id="Card2-card-item5">
-<div id="Card2-card-item6"></div>
+<div id="wb_Card1" style="display:flex;width:100%;z-index:15;" class="card">
+<div id="Card1-card-body">
+<img id="Card1-card-item0" src="images/41TnQ2PLDXL._AC_SL1302_.jpg" width="1000" height="1000" alt="Nut Opener" title="Nut Opener">
+<div id="Card1-card-item1">Nut Opener</div>
+<div id="Card1-card-item2">$15.99</div>
+<hr id="Card1-card-item3">
+<div id="Card1-card-item4"></div>
 </div>
-<div id="Card2-card-item7"><a href="https://www.facebook.com/share/12KHwkJMcaE/" title="Buy Now" class="stretched-link">Buy Now</a></div>
+<div id="Card1-card-item5" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Nut Opener" data-item-number="SKU0001" data-amount="15.99" data-currency-code="USD" data-success-url="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN/" data-cancel-url="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN/" data-cmd="_cart"><a href="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN" title="Buy Now" class="stretched-link">Buy Now</a></div>
 </div>
 </div>
 <div class="col-2">
-<div id="wb_list14Card" style="display:flex;width:100%;z-index:16;" class="card">
+<div id="wb_list14Card" style="display:flex;width:100%;z-index:16;" class="card" data--200-bottom-top="opacity:0;" data-center-bottom="opacity:1;">
 <div id="list14Card-card-body">
-<div id="list14Card-card-item0" data-1-center-top="transform:translate(0px,1px);" data-1-center-bottom="transform:translate(0px,1px);">The Ultimate Choice for Heating and Cooling in Any Condition! <br><br>Heating Even at -22°F (-30°C)!<br>With advanced intelligent preheating technology and electric heating system, this unit provides comfortable warmth even on the coldest winter days.<br><br>Inverter Cooling and Heating<br>Equipped with a GMCC compressor using R410A refrigerant, this unit operates quietly and efficiently. Inverter technology ensures energy savings and extends the lifespan of the device. (23,5 SEER2)<br><br>Wi-Fi Remote Control<br>Control your air conditioner from anywhere using the mobile app (Android/iOS) and enjoy a comfortable environment at all times.<br><br>FrostClean Technology<br>An advanced anti-frosting system that ensures optimal performance in any condition.<br><br>Excellent Cooling and Heating Capacity<br>With a wide cooling and heating capacity range , this unit is suitable for various spaces.<br><br>Quiet Design<br>With low noise levels , it brings peace and quiet to your home.<br><br>Easy Installation with 5m Copper Pipe and Cable<br>The unit comes with a 5-meter copper pipe and cable, making installation quick and hassle-free.<br><br>Wide Operating Temperature Range<br>This unit operates effectively in temperatures ranging from -22°F to 122°F (-30°C to 50°C).<br><br>Trusted Bestcold Brand<br>With the reliability and after-sales service of the Bestcold brand, this unit is a dependable choice for your home or office.</div>
+<div id="list14Card-card-item0">STAINLESS STEEL build made from heavy duty 304 stainless steel that resists rust, corrosion and tarnishing, guaranteeing long-lasting performance whether you're cracking walnuts daily or using occasionally for holiday preparations.<br><br>NUT CRACKERS for all nuts for macadamias, walnuts and pecans, smart pressure system cracks tough shells perfectly while keeping kernels whole. Stainless steel lever mechanism, macadamia nut cracker and nut crackers for pecans. <br><br>NUTCRACKER SETS with picks professionally designed with a contoured grip and needle sharp point to carefully pry out intact walnut, pecan and macadamia kernels from their shells without leaving behind sharp fragments or damaging the meat.  <br><br>KITCHEN GADGETS this versatile nut cracker tool features a built in hanging hook for compact storage in kitchens, RVs, or campers, keeping your cooking area organized while remaining instantly accessible for cracking walnuts, pecans, and more.  <br><br>SEAFOOD TOOLS transitions seamlessly from cracking walnuts to shucking oysters, with a corrosion resistant stainless steel construction that withstands saltwater exposure while providing superior leverage for stubborn shells.</div>
 </div>
 </div>
 </div>
@@ -351,12 +332,6 @@ $(document).ready(function()
 <div class="col-3">
 </div>
 <div class="col-4">
-<div id="wb_Text1">
-<h1>12000 BTU Inverter Air Conditioner</h1>
-</div>
-<div id="wb_Text2">
-<h2>Heating and Cooling Down to -30°C</h2>
-</div>
 </div>
 </div>
 </div>
