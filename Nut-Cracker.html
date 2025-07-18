@@ -11,9 +11,9 @@
 <link href="css/Nut-Cracker.css" rel="stylesheet">
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="js/jquery.ui.effect.min.js"></script>
-<script src="js/wb.parallax.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/wb.parallax.min.js"></script>
 <script src="js/skrollr.min.js"></script>
 <script src="js/wwb20.min.js"></script>
 <script>
@@ -37,7 +37,6 @@ $(document).ready(function()
       event.preventDefault();
       $('html, body').stop().animate({ scrollTop: $('#wb_navigationLayoutGrid').offset().top }, 600, 'easeOutCirc');
    });
-   $('#wb_bestSellerLayoutGrid').parallax();
    $('#wb_LayoutGrid1').parallax();
    function onScrollCard1()
    {
@@ -193,14 +192,12 @@ $(document).ready(function()
 <li data-bs-target="#welcome-carousel" data-bs-slide-to="1"></li>
 <li data-bs-target="#welcome-carousel" data-bs-slide-to="2"></li>
 <li data-bs-target="#welcome-carousel" data-bs-slide-to="3"></li>
+<li data-bs-target="#welcome-carousel" data-bs-slide-to="4"></li>
+<li data-bs-target="#welcome-carousel" data-bs-slide-to="5"></li>
 </ol>
 <div class="carousel-inner">
 <div class="carousel-item frame-1 active">
 <div class="carousel-item-inner">
-<div id="wb_welcome-text1">
-<p>NEW INSPIRATION 2025</p>
-<p style="font-size:13px;line-height:16px;">&nbsp;</p>
-</div>
 <div id="wb_welcome-text2">
 <p style="font-size:13px;line-height:16px;">&nbsp;</p>
 </div>
@@ -208,19 +205,24 @@ $(document).ready(function()
 </div>
 <div class="carousel-item frame-2">
 <div class="carousel-item-inner">
-</div>
-</div>
-<div class="carousel-item frame-3">
-<div class="carousel-item-inner">
-<div id="wb_welcome-text3">
-<p>NEW INSPIRATION 2025</p>
-</div>
 <div id="wb_welcome-text4">
 <p style="font-size:27px;line-height:30px;font-weight:bold;">&nbsp;</p>
 </div>
 </div>
 </div>
+<div class="carousel-item frame-3">
+<div class="carousel-item-inner">
+</div>
+</div>
 <div class="carousel-item frame-4">
+<div class="carousel-item-inner">
+</div>
+</div>
+<div class="carousel-item frame-5">
+<div class="carousel-item-inner">
+</div>
+</div>
+<div class="carousel-item frame-6">
 <div class="carousel-item-inner">
 </div>
 </div>
@@ -240,11 +242,11 @@ $(document).ready(function()
 </div>
 </div>
 <div id="wb_LayoutGrid1">
-<div id="LayoutGrid1">
+<header id="LayoutGrid1">
 <div class="col-1">
-<div id="wb_Card1" style="display:flex;width:100%;z-index:15;" class="card">
+<div id="wb_Card1" style="display:flex;width:100%;z-index:11;" class="card">
 <div id="Card1-card-body">
-<img id="Card1-card-item0" src="images/41TnQ2PLDXL._AC_SL1302_.jpg" width="1000" height="1000" alt="Nut Opener" title="Nut Opener">
+<img id="Card1-card-item0" src="images/01.jpg" width="2000" height="2000" alt="Nut Opener" title="Nut Opener">
 <div id="Card1-card-item1">Nut Opener</div>
 <div id="Card1-card-item2">$15.99</div>
 <hr id="Card1-card-item3">
@@ -254,19 +256,19 @@ $(document).ready(function()
 </div>
 </div>
 <div class="col-2">
-<div id="wb_list14Card" style="display:flex;width:100%;z-index:16;" class="card" data--200-bottom-top="opacity:0;" data-center-bottom="opacity:1;">
+<div id="wb_list14Card" style="display:flex;width:100%;z-index:12;" class="card" data--200-bottom-top="opacity:0;" data-center-bottom="opacity:1;">
 <div id="list14Card-card-body">
 <div id="list14Card-card-item0">STAINLESS STEEL build made from heavy duty 304 stainless steel that resists rust, corrosion and tarnishing, guaranteeing long-lasting performance whether you're cracking walnuts daily or using occasionally for holiday preparations.<br><br>NUT CRACKERS for all nuts for macadamias, walnuts and pecans, smart pressure system cracks tough shells perfectly while keeping kernels whole. Stainless steel lever mechanism, macadamia nut cracker and nut crackers for pecans. <br><br>NUTCRACKER SETS with picks professionally designed with a contoured grip and needle sharp point to carefully pry out intact walnut, pecan and macadamia kernels from their shells without leaving behind sharp fragments or damaging the meat.  <br><br>KITCHEN GADGETS this versatile nut cracker tool features a built in hanging hook for compact storage in kitchens, RVs, or campers, keeping your cooking area organized while remaining instantly accessible for cracking walnuts, pecans, and more.  <br><br>SEAFOOD TOOLS transitions seamlessly from cracking walnuts to shucking oysters, with a corrosion resistant stainless steel construction that withstands saltwater exposure while providing superior leverage for stubborn shells.</div>
 </div>
 </div>
 </div>
-</div>
+</header>
 </div>
 <div id="wb_serviceLayoutGrid">
 <div id="serviceLayoutGrid">
 <div class="row">
 <div class="col-1">
-<div id="wb_serviceCard1" style="display:inline-block;width:212px;height:67px;z-index:17;" class="card">
+<div id="wb_serviceCard1" style="display:inline-block;width:212px;height:67px;z-index:13;" class="card">
 <div id="serviceCard1-card-body">
 <div id="serviceCard1-card-item0"><a href="#"><i class="fa fa-truck"></i></a></div>
 <div id="serviceCard1-card-item1"><a href="http://">Shipping</a></div>
@@ -274,7 +276,7 @@ $(document).ready(function()
 </div>
 </div>
 <div class="col-2">
-<div id="wb_serviceCard2" style="display:inline-block;width:203px;height:67px;z-index:18;" class="card">
+<div id="wb_serviceCard2" style="display:inline-block;width:203px;height:67px;z-index:14;" class="card">
 <div id="serviceCard2-card-body">
 <div id="serviceCard2-card-item0"><a href="#"><i class="fa fa-envelope-o"></i></a></div>
 <div id="serviceCard2-card-item1"><a href="http://">Contact us 24/7</a></div>
@@ -282,7 +284,7 @@ $(document).ready(function()
 </div>
 </div>
 <div class="col-3">
-<div id="wb_serviceCard3" style="display:inline-block;width:209px;height:67px;z-index:19;" class="card">
+<div id="wb_serviceCard3" style="display:inline-block;width:209px;height:67px;z-index:15;" class="card">
 <div id="serviceCard3-card-body">
 <div id="serviceCard3-card-item0"><a href="#"><i class="fa fa-sign-out"></i></a></div>
 <div id="serviceCard3-card-item1"><a href="http://">30 Days Return</a></div>
@@ -290,7 +292,7 @@ $(document).ready(function()
 </div>
 </div>
 <div class="col-4">
-<div id="wb_serviceCard4" style="display:inline-block;width:209px;height:67px;z-index:20;" class="card">
+<div id="wb_serviceCard4" style="display:inline-block;width:209px;height:67px;z-index:16;" class="card">
 <div id="serviceCard4-card-body">
 <div id="serviceCard4-card-item0"><a href="#"><i class="fa fa-lock"></i></a></div>
 <div id="serviceCard4-card-item1"><a href="http://">Secure Payments</a></div>
@@ -311,19 +313,19 @@ $(document).ready(function()
 <div id="wb_contactAddress">
 <p>Email: info@avantpart.com</p>
 </div>
-<div id="wb_contactIcon1" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:23;">
+<div id="wb_contactIcon1" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:19;">
 <a href="./index.html"><div id="contactIcon1"><i class="fa fa-linkedin-square"></i></div></a>
 </div>
-<div id="wb_contactIcon2" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:24;">
+<div id="wb_contactIcon2" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:20;">
 <a href="./index.html"><div id="contactIcon2"><i class="fa fa-facebook-official"></i></div></a>
 </div>
-<div id="wb_contactIcon3" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:25;">
+<div id="wb_contactIcon3" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:21;">
 <a href="./index.html"><div id="contactIcon3"><i class="fa fa-twitter"></i></div></a>
 </div>
-<div id="wb_contactIcon4" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:26;">
+<div id="wb_contactIcon4" style="display:inline-block;width:27px;height:27px;text-align:center;z-index:22;">
 <a href="./index.html"><div id="contactIcon4"><i class="fa fa-youtube-play"></i></div></a>
 </div>
-<div id="wb_Icon2" style="display:inline-block;width:20px;height:20px;text-align:center;z-index:27;">
+<div id="wb_Icon2" style="display:inline-block;width:20px;height:20px;text-align:center;z-index:23;">
 <a href="https://www.instagram.com/avant.part?igsh=dXpsYWtobGp0Z3Ex&utm_source=qr"><div id="Icon2"><i class="fa fa-instagram"></i></div></a>
 </div>
 </div>

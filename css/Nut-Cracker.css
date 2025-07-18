@@ -402,12 +402,10 @@ body
    text-align: center;
    width: 100%;
    background-color: transparent;
-   background-image: url('../images/photo_2025-03-03_15-06-03.jpg');
-   background-repeat: repeat;
-   background-position: left top;
-   background-attachment: fixed;
-   background-position: 50% 0;
-   background-size: cover;
+   background-image: url('../images/Brand Story Background.jpg');
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: contain;
    border: 0px solid #CCCCCC;
    border-radius: 0px;
    box-sizing: border-box;
@@ -587,7 +585,7 @@ body
    padding: 0;
    margin: 0;
    position: absolute;
-   margin-left: -68px;
+   margin-left: -102px;
    left: 50%;
    vertical-align: middle;
    z-index: 999;
@@ -706,64 +704,50 @@ body
 #welcome-carousel .frame-1
 {
    background-color: #F4F5F9;
-   background-image: url('../images/61JbaBTvu1L._AC_SL1304_.jpg');
+   background-image: url('../images/02.jpg');
    background-repeat: no-repeat;
    background-position: center center;
-   background-size: cover;
+   background-size: 100% 100%;
 }
 #welcome-carousel .frame-2
 {
-   background-color: transparent;
-   background-image: url('../images/61MGYdc2VwL._AC_SL1242_.jpg');
-   background-repeat: space;
+   background-color: #F4F5F9;
+   background-image: url('../images/03.jpg');
+   background-repeat: no-repeat;
    background-position: center center;
-   background-size: contain;
+   background-size: 100% 100%;
 }
 #welcome-carousel .frame-3
 {
-   background-color: #F4F5F9;
-   background-image: url('../images/71GnrgWGk5L._AC_SL1224_.jpg');
+   background-color: transparent;
+   background-image: url('../images/04.jpg');
    background-repeat: no-repeat;
    background-position: center center;
-   background-size: cover;
+   background-size: 100% 100%;
 }
 #welcome-carousel .frame-4
 {
    background-color: transparent;
-   background-image: url('../images/719pbnsaMGL._AC_SL1283_.jpg');
-   background-repeat: round;
+   background-image: url('../images/05.jpg');
+   background-repeat: no-repeat;
    background-position: center center;
-   background-size: contain;
+   background-size: 100% 100%;
 }
-#wb_welcome-text1 
+#welcome-carousel .frame-5
 {
    background-color: transparent;
-   background-image: none;
-   border: 0px solid #000000;
-   border-radius: 0px;
-   padding: 0 0 10px 0;
-   margin: 0;
-   text-align: center;
+   background-image: url('../images/06.jpg');
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: 100% 100%;
 }
-#wb_welcome-text1
+#welcome-carousel .frame-6
 {
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: 400;
-   font-size: 21px;
-   line-height: 24.5px;
-}
-#wb_welcome-text1 p, #wb_welcome-text1 ul
-{
-   margin: 0;
-   padding: 0;
-}
-#wb_welcome-text1
-{
-   display: block;
-   margin: 0;
-   box-sizing: border-box;
-   width: 100%;
+   background-color: transparent;
+   background-image: url('../images/07.jpg');
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
 }
 #wb_welcome-text2 
 {
@@ -791,36 +775,6 @@ body
    padding: 0;
 }
 #wb_welcome-text2
-{
-   display: block;
-   margin: 0;
-   box-sizing: border-box;
-   width: 100%;
-}
-#wb_welcome-text3 
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #000000;
-   border-radius: 0px;
-   padding: 0 0 10px 0;
-   margin: 0;
-   text-align: center;
-}
-#wb_welcome-text3
-{
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: 400;
-   font-size: 21px;
-   line-height: 24.5px;
-}
-#wb_welcome-text3 p, #wb_welcome-text3 ul
-{
-   margin: 0;
-   padding: 0;
-}
-#wb_welcome-text3
 {
    display: block;
    margin: 0;
@@ -868,7 +822,7 @@ body
    text-align: center;
    width: 100%;
    background-color: transparent;
-   background-image: url('../images/photo_2025-03-03_15-06-03.jpg');
+   background-image: url('../images/06.jpg');
    background-repeat: repeat;
    background-position: left top;
    background-attachment: fixed;
@@ -885,7 +839,7 @@ body
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
-   padding: 20px 0 55px 0;
+   padding: 100px 0 55px 0;
    margin-right: auto;
    margin-left: auto;
    max-width: 1280px;
