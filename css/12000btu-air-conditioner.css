@@ -1487,7 +1487,7 @@ body
    margin-right: -15px;
    margin-left: -15px;
 }
-#links > .row > .col-1, #links > .row > .col-2, #links > .row > .col-3, #links > .row > .col-4
+#links > .row > .col-1, #links > .row > .col-2, #links > .row > .col-3
 {
    box-sizing: border-box;
    font-size: 0;
@@ -1496,7 +1496,7 @@ body
    padding-left: 15px;
    position: relative;
 }
-#links > .row > .col-1, #links > .row > .col-2, #links > .row > .col-3, #links > .row > .col-4
+#links > .row > .col-1, #links > .row > .col-2, #links > .row > .col-3
 {
    float: left;
 }
@@ -1506,7 +1506,7 @@ body
    background-image: none;
    border: 0px solid #FFFFFF;
    border-radius: 0px;
-   width: 33.33333333%;
+   width: 41.66666667%;
    text-align: left;
 }
 #links > .row > .col-2
@@ -1515,19 +1515,10 @@ body
    background-image: none;
    border: 0px solid #FFFFFF;
    border-radius: 0px;
-   width: 16.66666667%;
+   width: 25%;
    text-align: left;
 }
 #links > .row > .col-3
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #FFFFFF;
-   border-radius: 0px;
-   width: 16.66666667%;
-   text-align: left;
-}
-#links > .row > .col-4
 {
    background-color: transparent;
    background-image: none;
@@ -1551,7 +1542,7 @@ body
 }
 @media (max-width: 768px)
 {
-#links > .row > .col-1, #links > .row > .col-2, #links > .row > .col-3, #links > .row > .col-4
+#links > .row > .col-1, #links > .row > .col-2, #links > .row > .col-3
 {
    float: none;
    width: 100%;
@@ -1998,4 +1989,36 @@ body
    margin: 0;
    box-sizing: border-box;
    width: 100%;
+}
+#wb_Image1
+{
+   margin: 0;
+   vertical-align: top;
+}
+#Image1
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   box-sizing: border-box;
+   padding: 0;
+   display: inline-block;
+   width: 40px;
+   height: 40px;
+   vertical-align: top;
+}
+#wb_Image2
+{
+   margin: 0;
+   vertical-align: top;
+}
+#Image2
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   box-sizing: border-box;
+   padding: 0;
+   display: inline-block;
+   width: 40px;
+   height: 40px;
+   vertical-align: top;
 }
