@@ -173,7 +173,7 @@ body
    background-image: none;
    border: 0px solid #FFFFFF;
    border-radius: 0px;
-   width: 50%;
+   width: 58.33333333%;
    text-align: center;
 }
 #navigationLayoutGrid > .row > .col-3
@@ -182,7 +182,7 @@ body
    background-image: none;
    border: 0px solid #FFFFFF;
    border-radius: 0px;
-   width: 25%;
+   width: 16.66666667%;
    text-align: right;
 }
 #navigationLayoutGrid:before,
@@ -3718,7 +3718,7 @@ body
    padding: 0;
    display: inline-block;
    width: 40px;
-   height: 40px;
+   height: 21px;
    vertical-align: top;
 }
 #wb_Image2
@@ -3734,7 +3734,7 @@ body
    padding: 0;
    display: inline-block;
    width: 40px;
-   height: 40px;
+   height: 21px;
    vertical-align: top;
 }
 #RollOverText1 .caption,

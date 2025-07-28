@@ -1990,20 +1990,20 @@ body
    box-sizing: border-box;
    width: 100%;
 }
-#wb_Image1
+#wb_Image3
 {
    margin: 0;
    vertical-align: top;
 }
-#Image1
+#Image3
 {
    border: 0px solid #000000;
    border-radius: 0px;
    box-sizing: border-box;
    padding: 0;
    display: inline-block;
-   width: 58px;
-   height: 30px;
+   width: 40px;
+   height: 21px;
    vertical-align: top;
 }
 #wb_Image2
@@ -2018,7 +2018,7 @@ body
    box-sizing: border-box;
    padding: 0;
    display: inline-block;
-   width: 56px;
-   height: 29px;
+   width: 40px;
+   height: 21px;
    vertical-align: top;
 }
