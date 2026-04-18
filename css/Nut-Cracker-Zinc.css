@@ -243,6 +243,54 @@ body
    font-size: 12px;
    width: 14px;
 }
+#wb_Icon1
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #245580;
+   border-radius: 0px;
+   text-align: center;
+   margin: 5px 10px 0 0 ;
+   padding: 0;
+   vertical-align: top;
+   display:inline-block;
+   position:relative;
+}
+#wb_Icon1 a
+{
+   text-decoration: none;
+}
+#wb_Icon1 a::after
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   pointer-events: auto;
+   content: "";
+}
+#Icon1
+{
+   height: 20px;
+   width: 20px;
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: center;
+}
+#Icon1 i
+{
+   color: #D6D6D6;
+   display: inline-block;
+   font-size: 20px;
+   line-height: 20px;
+   vertical-align: middle;
+}
+#wb_Icon1:hover #Icon1 i
+{
+   color: #FFFFFF;
+}
 #wb_navigationLayoutGrid
 {
    clear: both;
@@ -393,6 +441,38 @@ body
    background-color: #FFFFFF;
    transition: background-color 500ms linear 0ms;
 }
+#wb_Image1
+{
+   margin: 0;
+   vertical-align: top;
+}
+#Image1
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   box-sizing: border-box;
+   padding: 0;
+   display: inline-block;
+   width: 40px;
+   height: 21px;
+   vertical-align: top;
+}
+#wb_Image2
+{
+   margin: 0;
+   vertical-align: top;
+}
+#Image2
+{
+   border: 0px solid #000000;
+   border-radius: 0px;
+   box-sizing: border-box;
+   padding: 0;
+   display: inline-block;
+   width: 40px;
+   height: 21px;
+   vertical-align: top;
+}
 #wb_bestSellerLayoutGrid
 {
    clear: both;
@@ -494,7 +574,7 @@ body
 #wb_welcome-carousel
 {
    background-color: transparent;
-   background-image: url('../images/Nut-Cracker_wb_welcome-carousel_bkgrnd.png');
+   background-image: url('../images/Nut-Cracker-Zinc_wb_welcome-carousel_bkgrnd.png');
    background-repeat: repeat;
    background-position: left top;
    border-radius: 0px;
@@ -1012,6 +1092,36 @@ body
    color: inherit;
    text-decoration: none;
 }
+#wb_list14Card
+{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   margin: 0;
+   background-color: #000000;
+   background-image: none;
+   border: 0px solid #0D6EFD;
+   border-radius: 0px;
+   text-align: left;
+}
+#list14Card-card-body
+{
+   padding: 25px 25px 25px 25px;
+   flex: 1 1 auto;
+   font-size: 0;
+}
+#list14Card-card-item0
+{
+   box-sizing: border-box;
+   margin: 0 0 20px 0 ;
+   padding: 0;
+   color: #FFFFFF;
+   font-family: Arial;
+   font-weight: bold;
+   font-style: normal;
+   font-size: 19px;
+}
 #wb_serviceLayoutGrid
 {
    clear: both;
@@ -1463,60 +1573,6 @@ body
    width: 100%;
 }
 }
-#wb_contactIcon1
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #EDE9E1;
-   border-radius: 50%;
-   text-align: center;
-   margin: 0 5px 0 0 ;
-   padding: 2px 2px 2px 2px;
-   vertical-align: top;
-   display:inline-block;
-   position:relative;
-}
-#wb_contactIcon1 a
-{
-   text-decoration: none;
-}
-#wb_contactIcon1 a::after
-{
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   z-index: 1;
-   pointer-events: auto;
-   content: "";
-}
-#wb_contactIcon1:hover
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #645E59;
-}
-#contactIcon1
-{
-   height: 27px;
-   width: 31px;
-   display: flex;
-   flex-wrap: nowrap;
-   justify-content: center;
-}
-#contactIcon1 i
-{
-   color: #D9D9DA;
-   display: inline-block;
-   font-size: 27px;
-   line-height: 27px;
-   vertical-align: middle;
-}
-#wb_contactIcon1:hover #contactIcon1 i
-{
-   color: #D9D9DA;
-}
 #wb_contactIcon2
 {
    background-color: transparent;
@@ -1737,54 +1793,6 @@ body
    box-sizing: border-box;
    width: 100%;
 }
-#wb_Icon1
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #245580;
-   border-radius: 0px;
-   text-align: center;
-   margin: 5px 10px 0 0 ;
-   padding: 0;
-   vertical-align: top;
-   display:inline-block;
-   position:relative;
-}
-#wb_Icon1 a
-{
-   text-decoration: none;
-}
-#wb_Icon1 a::after
-{
-   position: absolute;
-   top: 0;
-   right: 0;
-   bottom: 0;
-   left: 0;
-   z-index: 1;
-   pointer-events: auto;
-   content: "";
-}
-#Icon1
-{
-   height: 20px;
-   width: 20px;
-   display: flex;
-   flex-wrap: nowrap;
-   justify-content: center;
-}
-#Icon1 i
-{
-   color: #D6D6D6;
-   display: inline-block;
-   font-size: 20px;
-   line-height: 20px;
-   vertical-align: middle;
-}
-#wb_Icon1:hover #Icon1 i
-{
-   color: #FFFFFF;
-}
 #wb_Icon2
 {
    background-color: transparent;
@@ -1833,65 +1841,57 @@ body
 {
    color: #FFFFFF;
 }
-#wb_list14Card
+#wb_contactIcon1
 {
-   position: relative;
-   display: flex;
-   flex-direction: column;
-   box-sizing: border-box;
-   margin: 0;
-   background-color: #000000;
+   background-color: transparent;
    background-image: none;
-   border: 0px solid #0D6EFD;
-   border-radius: 0px;
-   text-align: left;
-}
-#list14Card-card-body
-{
-   padding: 25px 25px 25px 25px;
-   flex: 1 1 auto;
-   font-size: 0;
-}
-#list14Card-card-item0
-{
-   box-sizing: border-box;
-   margin: 0 0 20px 0 ;
-   padding: 0;
-   color: #FFFFFF;
-   font-family: Arial;
-   font-weight: bold;
-   font-style: normal;
-   font-size: 19px;
-}
-#wb_Image1
-{
-   margin: 0;
+   border: 0px solid #EDE9E1;
+   border-radius: 50%;
+   text-align: center;
+   margin: 0 5px 0 0 ;
+   padding: 2px 2px 2px 2px;
    vertical-align: top;
+   display:inline-block;
+   position:relative;
 }
-#Image1
+#wb_contactIcon1 a
 {
-   border: 0px solid #000000;
-   border-radius: 0px;
-   box-sizing: border-box;
-   padding: 0;
+   text-decoration: none;
+}
+#wb_contactIcon1 a::after
+{
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   z-index: 1;
+   pointer-events: auto;
+   content: "";
+}
+#wb_contactIcon1:hover
+{
+   background-color: transparent;
+   background-image: none;
+   border: 0px solid #645E59;
+}
+#contactIcon1
+{
+   height: 27px;
+   width: 31px;
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: center;
+}
+#contactIcon1 i
+{
+   color: #D9D9DA;
    display: inline-block;
-   width: 40px;
-   height: 21px;
-   vertical-align: top;
+   font-size: 27px;
+   line-height: 27px;
+   vertical-align: middle;
 }
-#wb_Image2
+#wb_contactIcon1:hover #contactIcon1 i
 {
-   margin: 0;
-   vertical-align: top;
-}
-#Image2
-{
-   border: 0px solid #000000;
-   border-radius: 0px;
-   box-sizing: border-box;
-   padding: 0;
-   display: inline-block;
-   width: 40px;
-   height: 21px;
-   vertical-align: top;
+   color: #D9D9DA;
 }

@@ -494,7 +494,7 @@ body
 #wb_welcome-carousel
 {
    background-color: transparent;
-   background-image: url('../images/Nut-Cracker_wb_welcome-carousel_bkgrnd.png');
+   background-image: url('../images/Walnut-Cracker_wb_welcome-carousel_bkgrnd.png');
    background-repeat: repeat;
    background-position: left top;
    border-radius: 0px;
@@ -1136,7 +1136,6 @@ body
    height: 68px;
    box-sizing: border-box;
    margin: 0;
-   padding: 10px 10px 10px 10px;
    border: 0px solid #000000;
    border-radius: 0px;
    background-color: transparent;
@@ -1146,6 +1145,13 @@ body
    font-weight: normal;
    font-style: normal;
    font-size: 48px;
+}
+#serviceCard1-card-item0 a
+{
+   color: inherit;
+   display: block;
+   padding: 10px 10px 10px 10px;
+   text-decoration: none;
 }
 #serviceCard1-card-item0 i
 {
@@ -1199,7 +1205,6 @@ body
    height: 68px;
    box-sizing: border-box;
    margin: 0;
-   padding: 10px 10px 10px 10px;
    border: 0px solid #000000;
    border-radius: 0px;
    background-color: transparent;
@@ -1209,6 +1214,13 @@ body
    font-weight: normal;
    font-style: normal;
    font-size: 48px;
+}
+#serviceCard2-card-item0 a
+{
+   color: inherit;
+   display: block;
+   padding: 10px 10px 10px 10px;
+   text-decoration: none;
 }
 #serviceCard2-card-item0 i
 {

@@ -401,40 +401,6 @@ $(document).ready(function()
    {
       $('#wb_LayoutGrid2product,#wb_LayoutGrid1About').css('background-attachment', 'scroll');
    }
-   $('body').on('click','[data-ecommerce-platform="paypal"]', function(e)
-   {
-      e.preventDefault();
-      var url = "https://www.paypal.com/cgi-bin/webscr?add=1&cmd=";
-      url += $(this).attr('data-cmd');
-      url += "&business=";
-      url += encodeURIComponent($(this).attr('data-business'));
-      url += "&item_name=";
-      url += encodeURIComponent($(this).attr('data-item-name'));
-      url += "&item_number=";
-      url += encodeURIComponent($(this).attr('data-item-number'));
-      url += "&amount=";
-      url += encodeURIComponent($(this).attr('data-amount'));
-      url += "&currency_code=";
-      url += encodeURIComponent($(this).attr('data-currency-code'));
-      if ($(this).attr('data-quantity'))
-      {
-         url += "&quantity=";
-         url += encodeURIComponent($(this).attr('data-quantity'));
-      }
-      url += "&shipping=";
-      url += encodeURIComponent($(this).attr('data-shipping'));
-      url += "&shipping2=";
-      url += encodeURIComponent($(this).attr('data-shipping2'));
-      url += "&handling=";
-      url += encodeURIComponent($(this).attr('data-handling'));
-      url += "&no_shipping=";
-      url += encodeURIComponent($(this).attr('data-no_shipping'));
-      url += "&return=";
-      url += encodeURIComponent($(this).attr('data-success-url'));
-      url += "&cancel_return=";
-      url += encodeURIComponent($(this).attr('data-cancel-url'));
-      window.open(url, '_click');
-   });
 });
 </script>
 <link rel="icon" type="image/png" href="favicon.png">
@@ -560,7 +526,7 @@ $(document).ready(function()
 </div>
 </div>
 </div>
-<div id="upStickyLayer" style="position:fixed;text-align:left;left:auto;right:25px;top:auto;bottom:25px;width:50px;height:50px;z-index:51;">
+<div id="upStickyLayer" style="position:fixed;text-align:left;left:auto;right:25px;top:auto;bottom:25px;width:50px;height:50px;z-index:52;">
 <div id="wb_upIcon" style="position:absolute;left:9px;top:8px;width:24px;height:24px;text-align:center;z-index:11;">
 <a href="#headerLayoutGrid"><div id="upIcon"><i class="fa fa-arrow-up"></i></div></a></div>
 </div>
@@ -570,7 +536,7 @@ $(document).ready(function()
 <div class="col-1">
 <div class="col-1-padding">
 <div id="RollOverText1" style="overflow:hidden;display:block;position: relative;" data-3dtilt data-tilt-max="3">
-   <a href="./12000btu-air-conditioner.html" title="12000 BTU Air Conditioner in Montréal inverter -30"><img alt="NEW IN" class="image" src="images/25e6bb1ce7f8062f0592f4a8644e48e2.jpg" width="303" height="0"></a>
+   <a href="./12000btu-air-conditioner.html" title="12000 BTU Air Conditioner in Montréal inverter -30"><img alt="NEW IN" class="image" src="images/25e6bb1ce7f8062f0592f4a8644e48e2.jpg" width="303" height="303"></a>
    <div class="caption">
       <div class="title">NEW IN</div>
       <p class="description"></p>
@@ -582,7 +548,7 @@ $(document).ready(function()
 <div class="col-2">
 <div class="col-2-padding">
 <div id="RollOverText2" style="overflow:hidden;display:block;position: relative;" data-bottom="background-color:rgba(255,255,255,1.0);" data-3dtilt data-tilt-max="3">
-   <a href="./Nut-Cracker.html"><img alt="NEW IN" class="image" src="images/01.jpg" width="303" height="0"></a>
+   <a href="./Nut-Cracker.html"><img alt="NEW IN" class="image" src="images/01.jpg" width="303" height="303"></a>
    <div class="caption">
       <div class="title">NEW IN</div>
       <p class="description"></p>
@@ -594,11 +560,11 @@ $(document).ready(function()
 <div class="col-3">
 <div class="col-3-padding">
 <div id="RollOverText3" style="overflow:hidden;display:block;position: relative;" data-3dtilt data-tilt-max="3">
-   <a href="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN"><img alt="NEW IN" class="image" src="images/31zuvSbUklS._AC_.jpg" width="303" height="0"></a>
+   <a href="./Nut-Cracker-Zinc.html"><img alt="NEW IN" class="image" src="images/resized_2000x2000.png" width="303" height="303"></a>
    <div class="caption">
       <div class="title">NEW IN</div>
       <p class="description"></p>
-      <a class="link" href="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN">Shop Now</a>
+      <a class="link" href="./Nut-Cracker-Zinc.html">Shop Now</a>
    </div>
 </div>
 </div>
@@ -625,7 +591,24 @@ $(document).ready(function()
 <div class="col-1">
 </div>
 <div class="col-2">
-<div id="wb_latestCard2" style="display:flex;width:100%;z-index:16;" class="card">
+<div id="wb_Card3" style="display:flex;width:100%;z-index:16;" class="card">
+<div id="Card3-card-body">
+<img id="Card3-card-item0" src="images/resized_2000x2000.png" width="2000" height="2000" alt="" title="">
+<div id="Card3-card-item1">Nut Cracker Zinc Alloy</div>
+<div id="Card3-card-item2"><i class="fa fa-star"></i></div>
+<div id="Card3-card-item3"><i class="fa fa-star"></i></div>
+<div id="Card3-card-item4"><i class="fa fa-star"></i></div>
+<div id="Card3-card-item5"><i class="fa fa-star"></i></div>
+<div id="Card3-card-item6"><i class="fa fa-star"></i></div>
+<hr id="Card3-card-item7">
+<div id="Card3-card-item8">$ 44.99</div>
+<hr id="Card3-card-item9">
+<div id="Card3-card-item10"><a href="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN"><i class="fa fa-shopping-cart"></i>Buy Now</a></div>
+</div>
+</div>
+</div>
+<div class="col-3">
+<div id="wb_latestCard2" style="display:flex;width:100%;z-index:17;" class="card">
 <div id="latestCard2-card-body">
 <img id="latestCard2-card-item0" src="images/01.jpg" width="2000" height="2000" alt="Nut Opener" title="Nut Opener">
 <div id="latestCard2-card-item1">Nut Opener</div>
@@ -642,7 +625,7 @@ $(document).ready(function()
 </div>
 </div>
 </div>
-<div class="col-3">
+<div class="col-4">
 </div>
 </div>
 </div>
@@ -682,20 +665,20 @@ $(document).ready(function()
 <div id="wb_bestSellerLayoutGrid">
 <div id="bestSellerLayoutGrid">
 <div class="col-1">
-<div id="wb_bestSellerCard2" style="display:flex;width:100%;z-index:21;" class="card" onscroll="AnimateCss('wb_bestSellerCard2', 'slide-up-in', 0, 500);return false;">
+<div id="wb_bestSellerCard2" style="display:flex;width:100%;z-index:22;" class="card" onscroll="AnimateCss('wb_bestSellerCard2', 'slide-up-in', 0, 500);return false;">
 <div id="bestSellerCard2-card-body">
-<img id="bestSellerCard2-card-item0" src="images/31zuvSbUklS._AC_.jpg" width="1000" height="1000" alt="T-Shirt" title="T-Shirt">
+<img id="bestSellerCard2-card-item0" src="images/resized_2000x2000.png" width="2000" height="2000" alt="T-Shirt" title="T-Shirt">
 <hr id="bestSellerCard2-card-item1">
 <div id="bestSellerCard2-card-item2">Nut Opener</div>
-<div id="bestSellerCard2-card-item3">$15.99</div>
+<div id="bestSellerCard2-card-item3">$44.99</div>
 <hr id="bestSellerCard2-card-item4">
 <div id="bestSellerCard2-card-item5"></div>
 </div>
-<div id="bestSellerCard2-card-item6" data-ecommerce-platform="paypal" data-business="paypal@mail.com" data-item-name="Nut Opener" data-item-number="SKU0001" data-amount="15.99" data-currency-code="USD" data-success-url="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN/" data-cancel-url="https://www.paypal.com/ncp/payment/5LYLDH8A9GQHN/" data-cmd="_cart"><a href="#" title="Out Of Order" class="stretched-link">Out Of Order</a></div>
+<div id="bestSellerCard2-card-item6"><a href="./Nut-Cracker-Zinc.html" title="Buy Now" class="stretched-link">Buy Now</a></div>
 </div>
 </div>
 <div class="col-2">
-<div id="wb_Card1" style="display:flex;width:100%;z-index:22;" class="card">
+<div id="wb_Card1" style="display:flex;width:100%;z-index:23;" class="card">
 <div id="Card1-card-body">
 <img id="Card1-card-item0" src="images/01.jpg" width="2000" height="2000" alt="Nut Opener" title="Nut Opener">
 <hr id="Card1-card-item1">
@@ -708,7 +691,7 @@ $(document).ready(function()
 </div>
 </div>
 <div class="col-3">
-<div id="wb_Card2" style="display:flex;width:100%;z-index:23;" class="card">
+<div id="wb_Card2" style="display:flex;width:100%;z-index:24;" class="card">
 <div id="Card2-card-body">
 <img id="Card2-card-item0" src="images/25e6bb1ce7f8062f0592f4a8644e48e2.jpg" width="1000" height="1000" alt="Mini Split Air Conditione" title="Mini Split Air Conditioner 12000 BTU With-30°C Heating Pump">
 <hr id="Card2-card-item1">
@@ -770,7 +753,7 @@ p {
 <div id="serviceLayoutGrid">
 <div class="row">
 <div class="col-1">
-<div id="wb_serviceCard1" style="display:inline-block;width:212px;height:67px;z-index:25;" class="card">
+<div id="wb_serviceCard1" style="display:inline-block;width:212px;height:67px;z-index:26;" class="card">
 <div id="serviceCard1-card-body">
 <div id="serviceCard1-card-item0"><a href="#"><i class="fa fa-truck"></i></a></div>
 <div id="serviceCard1-card-item1"><a href="http://">Shipping</a></div>
@@ -778,7 +761,7 @@ p {
 </div>
 </div>
 <div class="col-2">
-<div id="wb_serviceCard2" style="display:inline-block;width:203px;height:67px;z-index:26;" class="card">
+<div id="wb_serviceCard2" style="display:inline-block;width:203px;height:67px;z-index:27;" class="card">
 <div id="serviceCard2-card-body">
 <div id="serviceCard2-card-item0"><a href="#"><i class="fa fa-envelope-o"></i></a></div>
 <div id="serviceCard2-card-item1"><a href="http://">Contact us 24/7</a></div>
@@ -786,7 +769,7 @@ p {
 </div>
 </div>
 <div class="col-3">
-<div id="wb_serviceCard3" style="display:inline-block;width:209px;height:67px;z-index:27;" class="card">
+<div id="wb_serviceCard3" style="display:inline-block;width:209px;height:67px;z-index:28;" class="card">
 <div id="serviceCard3-card-body">
 <div id="serviceCard3-card-item0"><a href="#"><i class="fa fa-sign-out"></i></a></div>
 <div id="serviceCard3-card-item1"><a href="http://">30 Days Return</a></div>
@@ -794,7 +777,7 @@ p {
 </div>
 </div>
 <div class="col-4">
-<div id="wb_serviceCard4" style="display:inline-block;width:209px;height:67px;z-index:28;" class="card">
+<div id="wb_serviceCard4" style="display:inline-block;width:209px;height:67px;z-index:29;" class="card">
 <div id="serviceCard4-card-body">
 <div id="serviceCard4-card-item0"><a href="#"><i class="fa fa-lock"></i></a></div>
 <div id="serviceCard4-card-item1"><a href="http://">Secure Payments</a></div>
@@ -817,19 +800,19 @@ p {
 <div id="wb_contactAddress">
 <p>Email: info@avantpart.com</p>
 </div>
-<div id="wb_contactIcon1" style="display:inline-block;width:31px;height:27px;text-align:center;z-index:33;">
+<div id="wb_contactIcon1" style="display:inline-block;width:31px;height:27px;text-align:center;z-index:34;">
 <a href="./index.html"><div id="contactIcon1"><i class="fa fa-linkedin-square"></i></div></a>
 </div>
-<div id="wb_contactIcon2" style="display:inline-block;width:33px;height:27px;text-align:center;z-index:34;">
+<div id="wb_contactIcon2" style="display:inline-block;width:33px;height:27px;text-align:center;z-index:35;">
 <a href="./index.html"><div id="contactIcon2"><i class="fa fa-facebook-official"></i></div></a>
 </div>
-<div id="wb_contactIcon3" style="display:inline-block;width:30px;height:27px;text-align:center;z-index:35;">
+<div id="wb_contactIcon3" style="display:inline-block;width:30px;height:27px;text-align:center;z-index:36;">
 <a href="./index.html"><div id="contactIcon3"><i class="fa fa-twitter"></i></div></a>
 </div>
-<div id="wb_contactIcon4" style="display:inline-block;width:31px;height:27px;text-align:center;z-index:36;">
+<div id="wb_contactIcon4" style="display:inline-block;width:31px;height:27px;text-align:center;z-index:37;">
 <a href="./index.html"><div id="contactIcon4"><i class="fa fa-youtube-play"></i></div></a>
 </div>
-<div id="wb_Icon2" style="display:inline-block;width:31px;height:20px;text-align:center;z-index:37;">
+<div id="wb_Icon2" style="display:inline-block;width:31px;height:20px;text-align:center;z-index:38;">
 <a href="https://www.instagram.com/avant.part?igsh=dXpsYWtobGp0Z3Ex&utm_source=qr"><div id="Icon2"><i class="fa fa-instagram"></i></div></a>
 </div>
 </div>
@@ -847,9 +830,9 @@ p {
 <h4 class="modal-title">Quick View</h4>
 </div>
 <div class="modal-body">
-<div id="wb_product1Heading" style="position:absolute;left:26px;top:21px;width:588px;height:37px;z-index:40;">
+<div id="wb_product1Heading" style="position:absolute;left:26px;top:21px;width:588px;height:37px;z-index:41;">
 <h2 id="product1Heading">T-Shirt</h2></div>
-<div id="wb_product1Text" style="position:absolute;left:278px;top:80px;width:364px;height:75px;z-index:41;">
+<div id="wb_product1Text" style="position:absolute;left:278px;top:80px;width:364px;height:75px;z-index:42;">
 <span style="color:#000000;font-family:Arial;font-size:13px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. </span></div>
 <form action="https://www.paypal.com/cgi-bin/webscr" id="PayPal2_form" method="post" style="margin:0;padding:0;" target="PayPal">
 <input type="hidden" name="business" value="orders@pablosoftwaresolutions.com">
@@ -874,17 +857,17 @@ p {
 <button class="btn btn-default" data-dir="up" title="Spinner Up" type="button">+</button>
 </span>
 </div></div>
-<select name="os0" size="1" id="size" style="position:absolute;left:279px;top:174px;width:134px;height:30px;z-index:42;">
+<select name="os0" size="1" id="size" style="position:absolute;left:279px;top:174px;width:134px;height:30px;z-index:43;">
 <option selected value="Small">Small</option>
 <option value="Medium">Medium</option>
 <option value="Large">Large</option>
 <option value="X-Large">X-Large</option>
 </select>
-<input id="PayPal2" type="image" name="submit" src="images/buy-logo-medium.png" style="position:absolute;left:278px;top:282px;z-index:42;" alt="Make payments with PayPal, it's fast, free, and secure!">
+<input id="PayPal2" type="image" name="submit" src="images/buy-logo-medium.png" style="position:absolute;left:278px;top:282px;z-index:43;" alt="Make payments with PayPal, it's fast, free, and secure!">
 </form>
-<input type="text" id="amount" style="position:absolute;left:335px;top:230px;width:88px;height:16px;z-index:43;" name="amount" value="$12.99" spellcheck="false">
-<label for="serviceLayoutGrid" id="Label1" style="position:absolute;left:278px;top:229px;width:45px;height:16px;line-height:16px;z-index:44;">Total:</label>
-<div id="wb_productShape1" style="position:absolute;left:26px;top:80px;width:236px;height:236px;z-index:45;">
+<input type="text" id="amount" style="position:absolute;left:335px;top:230px;width:88px;height:16px;z-index:44;" name="amount" value="$12.99" spellcheck="false">
+<label for="serviceLayoutGrid" id="Label1" style="position:absolute;left:278px;top:229px;width:45px;height:16px;line-height:16px;z-index:45;">Total:</label>
+<div id="wb_productShape1" style="position:absolute;left:26px;top:80px;width:236px;height:236px;z-index:46;">
 <div id="productShape1"><div id="productShape1_text"><div><span style="color:#F5F5F5;font-family:Arial;font-size:13px;">Your Image Goes Here</span></div></div></div></div>
 </div>
 </div>
