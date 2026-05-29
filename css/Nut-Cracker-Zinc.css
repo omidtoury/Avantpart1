@@ -482,7 +482,7 @@ body
    text-align: center;
    width: 100%;
    background-color: transparent;
-   background-image: url('../images/Brand Story Background.jpg');
+   background-image: url('../images/Brand Story Background.png');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: contain;
@@ -784,7 +784,7 @@ body
 #welcome-carousel .frame-1
 {
    background-color: #F4F5F9;
-   background-image: url('../images/02.jpg');
+   background-image: url('../images/Card 02.png');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: 100% 100%;
@@ -792,7 +792,7 @@ body
 #welcome-carousel .frame-2
 {
    background-color: #F4F5F9;
-   background-image: url('../images/03.jpg');
+   background-image: url('../images/Card 03.png');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: 100% 100%;
@@ -800,7 +800,7 @@ body
 #welcome-carousel .frame-3
 {
    background-color: transparent;
-   background-image: url('../images/04.jpg');
+   background-image: url('../images/Card 04.png');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: 100% 100%;
@@ -808,7 +808,7 @@ body
 #welcome-carousel .frame-4
 {
    background-color: transparent;
-   background-image: url('../images/05.jpg');
+   background-image: url('../images/Card 05.png');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: 100% 100%;
@@ -816,7 +816,7 @@ body
 #welcome-carousel .frame-5
 {
    background-color: transparent;
-   background-image: url('../images/06.jpg');
+   background-image: url('../images/B0GLSYL47L.main.jpg');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: 100% 100%;
@@ -824,7 +824,7 @@ body
 #welcome-carousel .frame-6
 {
    background-color: transparent;
-   background-image: url('../images/07.jpg');
+   background-image: url('../images/PT02.jpg');
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
@@ -902,7 +902,7 @@ body
    text-align: center;
    width: 100%;
    background-color: transparent;
-   background-image: url('../images/06.jpg');
+   background-image: url('../images/PT06.jpg');
    background-repeat: repeat;
    background-position: left top;
    background-attachment: fixed;
