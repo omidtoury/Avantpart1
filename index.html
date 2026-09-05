@@ -467,144 +467,85 @@ $(document).ready(function()
 <div class="col-1">
 <div id="wb_Card4" style="display:flex;width:100%;z-index:8;" class="card">
 <div id="Card4-card-body">
-<div id="Card4-card-item0">
-
-<div class="scroll-video-section" id="productScrollVideo">
-
-    <div class="scroll-video-sticky">
-
-        <video
-            id="productVideo"
-            class="scroll-video"
-            muted
-            playsinline
-            preload="auto"
-            webkit-playsinline
-            disablepictureinpicture>
-            
+<div id="Card4-card-item0"><div id="productScrollSection">
+    <div id="productScrollSticky">
+        <video id="productScrollVideo"
+               muted
+               playsinline
+               webkit-playsinline
+               preload="auto"
+               poster="product-poster.jpg">
             <source src="video\488693965e397613.mp4" type="video/mp4">
-            
+            <source src="video\488693965e397613.webm" type="video/webm">
         </video>
-
-        <div class="scroll-video-overlay"></div>
-
     </div>
-
 </div>
 
 
 <script>
 (function () {
 
-    const section = document.getElementById("productScrollVideo");
-    const video = document.getElementById("productVideo");
+    const section = document.getElementById("productScrollSection");
+    const video = document.getElementById("productScrollVideo");
 
     if (!section || !video) return;
 
     let duration = 5;
-    let targetTime = 0;
-    let currentTime = 0;
-    let animationFrame = null;
+    let ticking = false;
 
-    /*
-     * Wait until video metadata is loaded.
-     * The actual duration will be used automatically.
-     */
     video.addEventListener("loadedmetadata", function () {
-        if (isFinite(video.duration) && video.duration > 0) {
+        if (video.duration && isFinite(video.duration)) {
             duration = video.duration;
         }
 
         video.currentTime = 0;
     });
 
-
-    /*
-     * Calculate scroll progress inside the section.
-     *
-     * 0%  = beginning of video
-     * 100% = end of video
-     */
-    function updateVideoPosition() {
+    function updateVideo() {
 
         const rect = section.getBoundingClientRect();
 
-        const scrollableDistance =
+        const scrollDistance =
             section.offsetHeight - window.innerHeight;
 
-        if (scrollableDistance <= 0) return;
+        if (scrollDistance <= 0) return;
 
-        let progress = -rect.top / scrollableDistance;
+        let progress = -rect.top / scrollDistance;
 
-        /*
-         * Keep progress between 0 and 1
-         */
         progress = Math.max(0, Math.min(1, progress));
 
-        targetTime = progress * duration;
-
-        if (!animationFrame) {
-            animationFrame = requestAnimationFrame(smoothSeek);
-        }
-    }
-
-
-    /*
-     * Smoothly move the video toward the target frame.
-     */
-    function smoothSeek() {
-
-        animationFrame = null;
-
-        const difference = targetTime - currentTime;
-
-        /*
-         * Smoothing factor.
-         * Increase for faster response.
-         */
-        currentTime += difference * 0.25;
-
-        /*
-         * Avoid tiny unnecessary updates.
-         */
-        if (Math.abs(difference) < 0.01) {
-            currentTime = targetTime;
-        }
+        const newTime = progress * duration;
 
         if (video.readyState >= 2) {
-            video.currentTime = currentTime;
+            video.currentTime = newTime;
         }
 
-        if (Math.abs(targetTime - currentTime) > 0.01) {
-            animationFrame = requestAnimationFrame(smoothSeek);
+        ticking = false;
+    }
+
+    function requestUpdate() {
+
+        if (!ticking) {
+            requestAnimationFrame(updateVideo);
+            ticking = true;
         }
     }
 
+    window.addEventListener("scroll", requestUpdate, {
+        passive: true
+    });
 
-    /*
-     * Update whenever the user scrolls.
-     */
-    window.addEventListener(
-        "scroll",
-        updateVideoPosition,
-        { passive: true }
-    );
+    window.addEventListener("resize", requestUpdate, {
+        passive: true
+    });
 
+    window.addEventListener("orientationchange", requestUpdate, {
+        passive: true
+    });
 
-    /*
-     * Also update after resize/orientation changes.
-     */
-    window.addEventListener(
-        "resize",
-        updateVideoPosition,
-        { passive: true }
-    );
+    video.addEventListener("loadeddata", requestUpdate);
 
-
-    /*
-     * Initial position.
-     */
-    updateVideoPosition();
+    requestUpdate();
 
 })();
 </script></div>
