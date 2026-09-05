@@ -214,7 +214,7 @@ body
    display: table;
    text-align: center;
    width: 100%;
-   background-color: transparent;
+   background-color: #F4F5F9;
    background-image: none;
    border: 0px solid #CCCCCC;
    border-radius: 0px;
@@ -1209,337 +1209,6 @@ body
 #wb_headerIcon1:hover #headerIcon1 i
 {
    color: #FFFFFF;
-}
-#wb_welcome-carousel
-{
-   background-color: #F4F5F9;
-   background-image: none;
-   border-radius: 0px;
-   margin: 0;
-}
-#wb_welcome-carousel
-{
-   box-sizing: border-box;
-   width: 100%;
-   height: 541px;
-}
-#welcome-carousel
-{
-   position: relative;
-   margin: 0;
-;
-   height: 100%;
-   box-sizing: border-box;
-}
-#welcome-carousel .carousel-inner
-{
-   overflow: hidden;
-   width: 100%;
-   height: 100%;
-   position: relative;
-}
-.carousel.pointer-event
-{
-   -ms-touch-action: pan-y;
-   touch-action: pan-y;
-}
-#welcome-carousel .carousel-inner::after
-{
-   display: block;
-   clear: both;
-   content: "";
-}
-#welcome-carousel .carousel-inner > .carousel-item
-{
-   display: none;
-   position: relative;
-   float: left;
-   width: 100%;
-   margin-right: -100%;
-   -webkit-backface-visibility: hidden;
-   backface-visibility: hidden;
-   transition: transform 500ms ease-in-out;
-   height: 100%;
-   text-align: center;
-}
-#welcome-carousel .carousel-item-next:not(.carousel-item-start), #welcome-carousel .active.carousel-item-end
-{
-   transform: translateX(100%);
-}
-#welcome-carousel .carousel-item-prev:not(.carousel-item-end), #welcome-carousel .active.carousel-item-start
-{
-   transform: translateX(-100%);
-}
-#welcome-carousel .carousel-item-inner
-{
-   padding: 0 25px 0 25px;
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   justify-content: center;
-   height: 100%;
-   box-sizing: border-box;
-}
-#welcome-carousel .carousel-inner > .carousel-item > img, #welcome-carousel .carousel-inner > .carousel-item > a > img
-{
-   display: block;
-   line-height: 1;
-}
-#welcome-carousel .carousel-inner > .active, #welcome-carousel .carousel-inner > .carousel-item-next, #welcome-carousel .carousel-inner > .carousel-item-prev
-{
-   display: block;
-}
-#welcome-carousel .carousel-inner > .carousel-item-next, #welcome-carousel .carousel-inner > .carousel-item-prev
-{
-   position: absolute;
-   top: 0;
-   width: 100%;
-}
-#welcome-carousel .carousel-indicators
-{
-   list-style: none;
-   bottom: 0;
-   padding: 0;
-   margin: 0;
-   position: absolute;
-   margin-left: -119px;
-   left: 50%;
-   vertical-align: middle;
-   z-index: 999;
-}
-#welcome-carousel .carousel-indicators li
-{
-   display: inline-block;
-   position: relative;
-   margin: 12px 12px 12px 12px;
-   width: 9px;
-   height: 9px;
-   cursor: pointer;
-   text-indent: -999px;
-   border-radius: 50%;
-   background-color: rgba(0,0,0,1.00);
-   border: 1px solid rgba(255,255,255,1.00);
-   transform: scale(0.4);
-   transition: transform 0.3s ease, background-color 0.3s ease;
-}
-#welcome-carousel .carousel-indicators .active
-{
-   transform: scale(1.0);
-}
-#welcome-carousel .carousel-indicators li:hover
-{
-   transform: scale(0.8);
-}
-#welcome-carousel .carousel-control
-{
-   display: flex;
-   position: absolute;
-   align-items: center;
-   justify-content: center;
-   left: 0;
-   top: 0;
-   bottom: 0;
-   width: 15%;
-   text-align: center;
-   opacity: 0.5;
-   cursor: pointer;
-   z-index: 7778;
-}
-#welcome-carousel .carousel-control.carousel-item-end
-{
-   left: auto;
-   right: 0;
-}
-#welcome-carousel .carousel-control .carousel-control-prev-icon, #welcome-carousel .carousel-control .carousel-control-next-icon
-{
-   display: inline-block;
-   position: absolute;
-   width: 42px;
-   height: 42px;
-   z-index: 5;
-}
-#welcome-carousel .carousel-control:hover
-{
-   text-decoration: none;
-   outline: 0;
-   opacity: 1;
-}
-.sr-only
-{
-   position: absolute;
-   width: 1px;
-   height: 1px;
-   padding: 0;
-   margin: -1px;
-   overflow: hidden;
-   clip: rect(0px, 0px, 0px, 0px);
-   border: 0;
-}
-#welcome-carousel .frame
-{
-   width: 970px;
-   display: inline-block;
-   float: left;
-   height: 541px;
-}
-#welcome-carousel .carousel-control-next, #welcome-carousel .carousel-control-prev
-{
-   cursor: pointer;
-   text-align: center;
-   opacity: 0.5;
-}
-#welcome-carousel .carousel-control-next-icon, #welcome-carousel .carousel-control-prev-icon
-{
-   display: inline-block;
-   width: 42px;
-   height: 42px;
-   background: transparent no-repeat center center;
-   background-size: 100% 100%;
-}
-#welcome-carousel .carousel-control-next:hover, #welcome-carousel .carousel-control-prev:hover
-{
-   text-decoration: none;
-   outline: 0;
-   opacity: 1;
-}
-#welcome-carousel .carousel-control-prev-icon
-{
-   background: url('data:image/svg+xml,%3csvg%20style%3d%22fill:%23000000%22%20viewBox%3d%220%200%20168%20168%22%20version%3d%221.1%22%20xmlns%3d%22http://www.w3.org/2000/svg%22%3e%0d%0a%20%20%20%3cpath%20d%3d%22M112%2042%20C113%2043%2c%20113%2044%2c%20113%2045%20C113%2047%2c%20113%2048%2c%20112%2049%20L75%2084%20L112%20120%20C113%20121%2c%20113%20122%2c%20113%20123%20C113%20125%2c%20113%20126%2c%20112%20127%20L107%20131%20C106%20132%2c%20105%20133%2c%20104%20133%20C102%20133%2c%20101%20132%2c%20100%20131%20L57%2088%20C56%2087%2c%2055%2086%2c%2055%2084%20C55%2083%2c%2056%2082%2c%2057%2081%20L100%2037%20C101%2036%2c%20102%2036%2c%20104%2036%20C105%2036%2c%20106%2036%2c%20107%2037%22/%3e%0d%0a%3c/svg%3e%0d%0a') no-repeat center center;
-}
-#welcome-carousel .carousel-control:hover .carousel-control-prev-icon
-{
-   background: url('data:image/svg+xml,%3csvg%20style%3d%22fill:%23FFFFFF%22%20viewBox%3d%220%200%20168%20168%22%20version%3d%221.1%22%20xmlns%3d%22http://www.w3.org/2000/svg%22%3e%0d%0a%20%20%20%3cpath%20d%3d%22M112%2042%20C113%2043%2c%20113%2044%2c%20113%2045%20C113%2047%2c%20113%2048%2c%20112%2049%20L75%2084%20L112%20120%20C113%20121%2c%20113%20122%2c%20113%20123%20C113%20125%2c%20113%20126%2c%20112%20127%20L107%20131%20C106%20132%2c%20105%20133%2c%20104%20133%20C102%20133%2c%20101%20132%2c%20100%20131%20L57%2088%20C56%2087%2c%2055%2086%2c%2055%2084%20C55%2083%2c%2056%2082%2c%2057%2081%20L100%2037%20C101%2036%2c%20102%2036%2c%20104%2036%20C105%2036%2c%20106%2036%2c%20107%2037%22/%3e%0d%0a%3c/svg%3e%0d%0a') no-repeat center center;
-}
-#welcome-carousel .carousel-control-next-icon
-{
-   background: url('data:image/svg+xml,%3csvg%20style%3d%22fill:%23000000%22%20viewBox%3d%220%200%20168%20168%22%20version%3d%221.1%22%20xmlns%3d%22http://www.w3.org/2000/svg%22%3e%0d%0a%20%20%20%3cpath%20d%3d%22M112%2081%20C113%2082%2c%20113%2083%2c%20113%2084%20C113%2086%2c%20113%2087%2c%20112%2088%20L68%20131%20C67%20132%2c%2066%20133%2c%2065%20133%20C63%20133%2c%2062%20132%2c%2061%20131%20L57%20127%20C56%20126%2c%2055%20125%2c%2055%20123%20C55%20122%2c%2056%20121%2c%2057%20120%20L93%2084%20L57%2049%20C56%2048%2c%2055%2047%2c%2055%2045%20C55%2044%2c%2056%2043%2c%2057%2042%20L61%2037%20C62%2036%2c%2063%2036%2c%2065%2036%20C66%2036%2c%2067%2036%2c%2068%2037%22/%3e%0d%0a%3c/svg%3e%0d%0a') no-repeat center center;
-}
-#welcome-carousel .carousel-control:hover .carousel-control-next-icon
-{
-   background: url('data:image/svg+xml,%3csvg%20style%3d%22fill:%23FFFFFF%22%20viewBox%3d%220%200%20168%20168%22%20version%3d%221.1%22%20xmlns%3d%22http://www.w3.org/2000/svg%22%3e%0d%0a%20%20%20%3cpath%20d%3d%22M112%2081%20C113%2082%2c%20113%2083%2c%20113%2084%20C113%2086%2c%20113%2087%2c%20112%2088%20L68%20131%20C67%20132%2c%2066%20133%2c%2065%20133%20C63%20133%2c%2062%20132%2c%2061%20131%20L57%20127%20C56%20126%2c%2055%20125%2c%2055%20123%20C55%20122%2c%2056%20121%2c%2057%20120%20L93%2084%20L57%2049%20C56%2048%2c%2055%2047%2c%2055%2045%20C55%2044%2c%2056%2043%2c%2057%2042%20L61%2037%20C62%2036%2c%2063%2036%2c%2065%2036%20C66%2036%2c%2067%2036%2c%2068%2037%22/%3e%0d%0a%3c/svg%3e%0d%0a') no-repeat center center;
-}
-#welcome-carousel .frame-1
-{
-   background-color: transparent;
-   background-image: url('../images/DALL·E 2025-04-09 16.42.20 - A .png');
-   background-repeat: repeat-y;
-   background-position: center center;
-   background-attachment: fixed;
-   background-size: cover;
-}
-#welcome-carousel .frame-2
-{
-   background-color: transparent;
-   background-image: url('../images/25e6bb1ce7f8062f0592f4a8644e48e2.jpg');
-   background-repeat: space;
-   background-position: center center;
-   background-size: contain;
-}
-#welcome-carousel .frame-3
-{
-   background-color: #F4F5F9;
-   background-image: url('../images/Brand Story Background.jpg');
-   background-repeat: no-repeat;
-   background-position: center center;
-   background-attachment: fixed;
-   background-size: cover;
-}
-#welcome-carousel .frame-4
-{
-   background-color: transparent;
-   background-image: url('../images/12da08b5392205e1b7e9aa619bb79365.jpg');
-   background-repeat: round;
-   background-position: center center;
-   background-size: contain;
-}
-#welcome-carousel .frame-5
-{
-   background-color: #F4F5F9;
-   background-image: url('../images/03.jpg');
-   background-repeat: no-repeat;
-   background-position: center center;
-   background-attachment: fixed;
-   background-size: cover;
-}
-#welcome-carousel .frame-6
-{
-   background-color: transparent;
-   background-image: url('../images/DALL·E 2025-04-09 16.42.20 - A .png');
-   background-repeat: no-repeat;
-   background-position: left top;
-}
-#welcome-carousel .frame-7
-{
-   background-color: transparent;
-   background-image: url('../images/04.jpg');
-   background-repeat: no-repeat;
-   background-position: center center;
-   background-attachment: fixed;
-   background-size: cover;
-}
-#wb_welcome-text2 
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #000000;
-   border-radius: 0px;
-   padding: 0 0 10px 0;
-   margin: 0;
-   text-align: center;
-}
-#wb_welcome-text2
-{
-   color: #000000;
-   font-family: Arial;
-   font-weight: bold;
-   font-style: italic;
-   text-decoration: line-through;
-   font-size: 13px;
-   line-height: 16px;
-}
-#wb_welcome-text2 p, #wb_welcome-text2 ul
-{
-   margin: 0;
-   padding: 0;
-}
-#wb_welcome-text2
-{
-   display: block;
-   margin: 0;
-   box-sizing: border-box;
-   width: 100%;
-}
-#wb_welcome-text3 
-{
-   background-color: transparent;
-   background-image: none;
-   border: 0px solid #000000;
-   border-radius: 0px;
-   padding: 0 0 10px 0;
-   margin: 0;
-   text-align: center;
-}
-#wb_welcome-text3
-{
-   color: #000000;
-   font-family: Arial;
-   font-weight: bold;
-   font-style: italic;
-   text-decoration: line-through;
-   font-size: 13px;
-   line-height: 16px;
-}
-#wb_welcome-text3 p, #wb_welcome-text3 ul
-{
-   margin: 0;
-   padding: 0;
-}
-#wb_welcome-text3
-{
-   display: block;
-   margin: 0;
-   box-sizing: border-box;
-   width: 100%;
 }
 #wb_serviceCard1
 {
@@ -3979,9 +3648,82 @@ body
    font-size: 12px;
    width: 12px;
 }
+#wb_Card4
+{
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   box-sizing: border-box;
+   margin: 0;
+   background-color: #FFFFFF;
+   background-image: none;
+   border: 1px solid #DDDDDD;
+   border-radius: 3px;
+   text-align: center;
+}
+#Card4-card-body
+{
+   padding: 0;
+   flex: 1 1 auto;
+   font-size: 0;
+}
+#Card4-card-item0
+{
+   box-sizing: border-box;
+   border-radius: 3px 3px 0 0 !important;
+   margin: 0;
+   width: 100%;
+   height: auto;
+}
 #RollOverText1 .caption,
 #RollOverText2 .caption,
 #RollOverText3 .caption
 {
    opacity: 1 !important;
+}
+/* =========================================
+   SCROLL-DRIVEN PRODUCT VIDEO
+   WYSIWYG Web Builder v20
+   ========================================= */
+
+.scroll-video-section {
+    position: relative;
+    width: 100%;
+    height: 300vh;
+}
+
+/* Sticky area */
+.scroll-video-sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+}
+
+/* Video */
+.scroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Optional dark/transparent overlay */
+.scroll-video-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Content above video, if needed */
+.scroll-video-content {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
 }
