@@ -413,6 +413,56 @@ $(document).ready(function()
 <div id="Card4-card-item0">```html
 
 
+
+
+<style>
+/* =========================================
+   SCROLL-DRIVEN PRODUCT VIDEO
+   WYSIWYG Web Builder v20
+   ========================================= */
+
+.scroll-video-section {
+    position: relative;
+    width: 100%;
+    height: 300vh;
+}
+
+/* Sticky area - تنظیم فاصله از بالای صفحه برای نرفتن زیر منو */
+.scroll-video-sticky {
+    position: sticky;
+    top: 60px;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+}
+
+/* نمایش کامل ویدیو بدون بیرون‌زدگی لبه‌ها */
+.scroll-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.scroll-video-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.scroll-video-content {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+}
+</style>
+
+
 <div class="scroll-video-section" id="productScrollVideo">
 
     <div class="scroll-video-sticky">
@@ -495,7 +545,7 @@ $(document).ready(function()
         video.play().then(function () {
 
             video.pause();
-            video.currentTime = 1 / 60;
+            video.currentTime = 0;
 
             currentTime = 0;
             targetTime = 0;
