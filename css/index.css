@@ -1094,7 +1094,7 @@ body
 #navigationMenu li:hover
 {
    background-color: #FFFFFF;
-   transition: background-color 500ms linear 0ms;
+   transition: background-color 0ms linear 0ms;
 }
 #wb_headerIcon3
 {
@@ -3312,7 +3312,6 @@ body
     height: 300vh;
 }
 
-/* Sticky area */
 .scroll-video-sticky {
     position: sticky;
     top: 0;
@@ -3325,7 +3324,6 @@ body
     background: #ffffff;
 }
 
-/* Video */
 .scroll-video {
     width: 100%;
     height: 100%;
@@ -3333,7 +3331,6 @@ body
     display: block;
 }
 
-/* Optional dark/transparent overlay */
 .scroll-video-overlay {
     position: absolute;
     inset: 0;
@@ -3341,7 +3338,6 @@ body
     z-index: 2;
 }
 
-/* Content above video, if needed */
 .scroll-video-content {
     position: absolute;
     z-index: 3;
