@@ -425,7 +425,7 @@ $(document).ready(function()
             webkit-playsinline
             disablepictureinpicture>
             
-            <source src="video\488693965e397613.mp4" type="video/mp4">
+            <source src="C:\Users\HP\Desktop\Register company\web\shope\video\488693965e397613.mp4" type="video/mp4">
             
         </video>
 
@@ -552,67 +552,48 @@ $(document).ready(function()
 })();
 </script>
 
+
 <script>
 (function () {
 
-    const section = document.getElementById("productScrollVideo");
     const video = document.getElementById("productVideo");
 
-    if (!section || !video) return;
+    if (!video) return;
 
-    let duration = 5;
-    let targetTime = 0;
-    let currentTime = 0;
-    let animationFrame = null;
+    const button = document.createElement("button");
 
-    video.addEventListener("loadedmetadata", function () {
-        if (isFinite(video.duration) && video.duration > 0) {
-            duration = video.duration;
-        }
+    button.innerText = "TEST VIDEO";
+    button.style.position = "fixed";
+    button.style.top = "20px";
+    button.style.left = "20px";
+    button.style.zIndex = "99999";
+    button.style.padding = "12px 20px";
+    button.style.fontSize = "16px";
 
-        video.currentTime = 0;
-    });
+    document.body.appendChild(button);
 
-    // ادامه کد فعلی خودت...
-    
-})();
-</script>
+    button.addEventListener("click", function () {
 
-<script>
-(function () {
+        video.play().then(function () {
 
-    function diagnostic() {
+            alert(
+                "PLAY SUCCESS\n\n" +
+                "readyState: " + video.readyState + "\n" +
+                "currentTime: " + video.currentTime + "\n" +
+                "duration: " + video.duration
+            );
 
-        const video = document.getElementById("productVideo");
+        }).catch(function (error) {
 
-        if (!video) {
-            alert("ERROR: productVideo not found");
-            return;
-        }
+            alert(
+                "PLAY FAILED\n\n" +
+                "Error: " + error + "\n\n" +
+                "readyState: " + video.readyState + "\n" +
+                "networkState: " + video.networkState
+            );
 
-        const rect = video.getBoundingClientRect();
+        });
 
-        const info =
-            "VIDEO DIAGNOSTIC\n\n" +
-            "readyState: " + video.readyState + "\n" +
-            "networkState: " + video.networkState + "\n" +
-            "error: " + (video.error ? video.error.code : "none") + "\n" +
-            "duration: " + video.duration + "\n" +
-            "currentTime: " + video.currentTime + "\n\n" +
-            "currentSrc: " + video.currentSrc + "\n\n" +
-            "video width: " + video.videoWidth + "\n" +
-            "video height: " + video.videoHeight + "\n\n" +
-            "rect width: " + rect.width + "\n" +
-            "rect height: " + rect.height + "\n" +
-            "rect top: " + rect.top + "\n\n" +
-            "paused: " + video.paused + "\n" +
-            "muted: " + video.muted;
-
-        alert(info);
-    }
-
-    window.addEventListener("load", function () {
-        setTimeout(diagnostic, 3000);
     });
 
 })();
