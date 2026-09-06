@@ -421,8 +421,8 @@ $(document).ready(function()
             class="scroll-video"
             muted
             playsinline
-            webkit-playsinline
             preload="auto"
+            webkit-playsinline
             disablepictureinpicture>
             
             <source src="video/videozinc.mp4" type="video/mp4">
@@ -448,32 +448,26 @@ $(document).ready(function()
     let targetTime = 0;
     let currentTime = 0;
     let animationFrame = null;
-    let isPrepared = false;
 
     /*
-     * آمادگی بدون فلش زدن برای iOS Safari
+     * Wait until video metadata is loaded.
+     * The actual duration will be used automatically.
      */
-    function wakeUpIOSVideo() {
-        if (isPrepared) return;
-        isPrepared = true;
-
-        // تغییر ناچیز زمان به جای play/pause برای آماده‌سازی Decoder بدون پرش تصویر
-        if (video.readyState >= 1) {
-            try {
-                video.currentTime = 0.001;
-            } catch (e) {}
-        }
-    }
-
     video.addEventListener("loadedmetadata", function () {
         if (isFinite(video.duration) && video.duration > 0) {
             duration = video.duration;
         }
-        try {
-            video.currentTime = 0;
-        } catch (e) {}
+
+        video.currentTime = 0;
     });
 
+
+    /*
+     * Calculate scroll progress inside the section.
+     *
+     * 0%  = beginning of video
+     * 100% = end of video
+     */
     function updateVideoPosition() {
 
         const rect = section.getBoundingClientRect();
@@ -485,6 +479,9 @@ $(document).ready(function()
 
         let progress = -rect.top / scrollableDistance;
 
+        /*
+         * Keep progress between 0 and 1
+         */
         progress = Math.max(0, Math.min(1, progress));
 
         targetTime = progress * duration;
@@ -494,38 +491,62 @@ $(document).ready(function()
         }
     }
 
+
+    /*
+     * Smoothly move the video toward the target frame.
+     */
     function smoothSeek() {
 
         animationFrame = null;
 
         const difference = targetTime - currentTime;
 
-        // ضریب نرمی حرکت
-        currentTime += difference * 0.2;
+        /*
+         * Smoothing factor.
+         * Increase for faster response.
+         */
+        currentTime += difference * 0.25;
 
-        if (Math.abs(difference) < 0.005) {
+        /*
+         * Avoid tiny unnecessary updates.
+         */
+        if (Math.abs(difference) < 0.01) {
             currentTime = targetTime;
         }
 
-        // پشتیبانی بهتر از readyState در مرورگرهای همراه
-        if (video.readyState >= 1) {
-            try {
-                video.currentTime = currentTime;
-            } catch (e) {}
+        if (video.readyState >= 2) {
+            video.currentTime = currentTime;
         }
 
-        if (Math.abs(targetTime - currentTime) > 0.005) {
+        if (Math.abs(targetTime - currentTime) > 0.01) {
             animationFrame = requestAnimationFrame(smoothSeek);
         }
     }
 
-    // فعال‌سازی بیدارباش ویدیو روی اولین تعامل لمسی یا اسکرول بدون فلش
-    window.addEventListener("touchstart", wakeUpIOSVideo, { passive: true, once: true });
-    window.addEventListener("scroll", wakeUpIOSVideo, { passive: true, once: true });
 
-    window.addEventListener("scroll", updateVideoPosition, { passive: true });
-    window.addEventListener("resize", updateVideoPosition, { passive: true });
+    /*
+     * Update whenever the user scrolls.
+     */
+    window.addEventListener(
+        "scroll",
+        updateVideoPosition,
+        { passive: true }
+    );
 
+
+    /*
+     * Also update after resize/orientation changes.
+     */
+    window.addEventListener(
+        "resize",
+        updateVideoPosition,
+        { passive: true }
+    );
+
+
+    /*
+     * Initial position.
+     */
     updateVideoPosition();
 
 })();
