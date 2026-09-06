@@ -211,7 +211,7 @@ $(document).ready(function()
    });
    function skrollrInit()
    {
-      skrollr.init({forceHeight: false, mobileCheck: function() { return false; }, smoothScrolling: false});
+      skrollr.init({forceHeight: false, mobileCheck: function() { return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent); }, smoothScrolling: false});
    }
    skrollrInit();
    function aspectRatioRollOverText3()
@@ -412,10 +412,7 @@ $(document).ready(function()
 <div id="Card4-card-body">
 <div id="Card4-card-item0">
 
-<div
-    id="productScrollVideo"
-    class="scroll-video-section"
->
+<div class="scroll-video-section" id="productScrollVideo">
 
     <div class="scroll-video-sticky">
 
@@ -424,16 +421,12 @@ $(document).ready(function()
             class="scroll-video"
             muted
             playsinline
-            webkit-playsinline
             preload="auto"
-            disablepictureinpicture
-        >
-
-            <source
-                src="video\488693965e397613.webm"
-                type="video/webm"
-            >
-
+            webkit-playsinline
+            disablepictureinpicture>
+            
+            <source src="C:\Users\HP\Desktop\Register company\web\shope\video\488693965e397613.mp4" type="video/mp4">
+            
         </video>
 
         <div class="scroll-video-overlay"></div>
@@ -451,146 +444,89 @@ $(document).ready(function()
 
     if (!section || !video) return;
 
-    let duration = 0;
+    let duration = 5;
     let targetTime = 0;
     let currentTime = 0;
-
     let animationFrame = null;
 
-
-    /* ================================
-       VIDEO READY
-       ================================ */
-
+    /*
+     * Wait until video metadata is loaded.
+     * The actual duration will be used automatically.
+     */
     video.addEventListener("loadedmetadata", function () {
-
-        if (
-            isFinite(video.duration) &&
-            video.duration > 0
-        ) {
-
+        if (isFinite(video.duration) && video.duration > 0) {
             duration = video.duration;
-
-            currentTime = 0;
-            targetTime = 0;
-
-            video.currentTime = 0;
         }
 
+        video.currentTime = 0;
     });
 
 
-    /* ================================
-       CALCULATE SCROLL POSITION
-       ================================ */
-
+    /*
+     * Calculate scroll progress inside the section.
+     *
+     * 0%  = beginning of video
+     * 100% = end of video
+     */
     function updateVideoPosition() {
 
-        if (!duration) return;
-
-        const rect =
-            section.getBoundingClientRect();
+        const rect = section.getBoundingClientRect();
 
         const scrollableDistance =
-            section.offsetHeight -
-            window.innerHeight;
+            section.offsetHeight - window.innerHeight;
 
         if (scrollableDistance <= 0) return;
 
+        let progress = -rect.top / scrollableDistance;
 
-        let progress =
-            -rect.top /
-            scrollableDistance;
+        /*
+         * Keep progress between 0 and 1
+         */
+        progress = Math.max(0, Math.min(1, progress));
 
-
-        progress =
-            Math.max(
-                0,
-                Math.min(1, progress)
-            );
-
-
-        targetTime =
-            progress *
-            Math.max(0, duration - 0.05);
-
+        targetTime = progress * duration;
 
         if (!animationFrame) {
-
-            animationFrame =
-                requestAnimationFrame(
-                    smoothSeek
-                );
-
+            animationFrame = requestAnimationFrame(smoothSeek);
         }
-
     }
 
 
-    /* ================================
-       SMOOTH VIDEO SCRUB
-       ================================ */
-
+    /*
+     * Smoothly move the video toward the target frame.
+     */
     function smoothSeek() {
 
         animationFrame = null;
 
+        const difference = targetTime - currentTime;
 
-        const difference =
-            targetTime -
-            currentTime;
+        /*
+         * Smoothing factor.
+         * Increase for faster response.
+         */
+        currentTime += difference * 0.25;
 
-
-        currentTime +=
-            difference * 0.15;
-
-
-        if (
-            Math.abs(difference) < 0.005
-        ) {
-
-            currentTime =
-                targetTime;
-
+        /*
+         * Avoid tiny unnecessary updates.
+         */
+        if (Math.abs(difference) < 0.01) {
+            currentTime = targetTime;
         }
 
-
-        if (
-            video.readyState >= 2 &&
-            isFinite(currentTime)
-        ) {
-
-            try {
-
-                video.currentTime =
-                    currentTime;
-
-            } catch (e) {}
-
+        if (video.readyState >= 2) {
+            video.currentTime = currentTime;
         }
 
-
-        if (
-            Math.abs(
-                targetTime -
-                currentTime
-            ) > 0.005
-        ) {
-
-            animationFrame =
-                requestAnimationFrame(
-                    smoothSeek
-                );
-
+        if (Math.abs(targetTime - currentTime) > 0.01) {
+            animationFrame = requestAnimationFrame(smoothSeek);
         }
-
     }
 
 
-    /* ================================
-       EVENTS
-       ================================ */
-
+    /*
+     * Update whenever the user scrolls.
+     */
     window.addEventListener(
         "scroll",
         updateVideoPosition,
@@ -598,6 +534,9 @@ $(document).ready(function()
     );
 
 
+    /*
+     * Also update after resize/orientation changes.
+     */
     window.addEventListener(
         "resize",
         updateVideoPosition,
@@ -605,12 +544,10 @@ $(document).ready(function()
     );
 
 
-    /* ================================
-       INITIALIZE
-       ================================ */
-
+    /*
+     * Initial position.
+     */
     updateVideoPosition();
-
 
 })();
 </script></div>

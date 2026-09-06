@@ -3302,104 +3302,48 @@ body
    height: auto;
 }
 /* =========================================
-   AVANTPART SCROLL-DRIVEN PRODUCT VIDEO
-   FULL VIEWPORT + SLOWER SCROLL
+   SCROLL-DRIVEN PRODUCT VIDEO
+   WYSIWYG Web Builder v20
    ========================================= */
 
-html,
-body {
-    overflow-x: hidden !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-/* Main scroll area */
 .scroll-video-section {
-    position: relative !important;
-    width: 100% !important;
-    max-width: none !important;
-    height: 600vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    position: relative;
+    width: 100%;
+    height: 300vh;
 }
 
-/* Sticky viewport */
+/* Sticky area */
 .scroll-video-sticky {
-    position: sticky !important;
-    top: 0 !important;
-
-    width: 100vw !important;
-    height: 100vh !important;
-
-    margin-left: calc(50% - 50vw) !important;
-
-    overflow: hidden !important;
-
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-
-    background: #000 !important;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
 }
 
 /* Video */
 .scroll-video {
-    position: absolute !important;
-
-    top: 0 !important;
-    left: 0 !important;
-
-    width: 100vw !important;
-    height: 100vh !important;
-
-    max-width: none !important;
-    max-height: none !important;
-
-    margin: 0 !important;
-    padding: 0 !important;
-
-    display: block !important;
-
-    object-fit: contain !important;
-    object-position: center center !important;
-
-    background: #000 !important;
-
-    border: 0 !important;
-    outline: none !important;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
-/* Overlay */
+/* Optional dark/transparent overlay */
 .scroll-video-overlay {
-    position: absolute !important;
-    inset: 0 !important;
-
-    width: 100% !important;
-    height: 100% !important;
-
-    pointer-events: none !important;
-
-    z-index: 2 !important;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
 }
 
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 768px) {
-
-    .scroll-video-section {
-        height: 500vh !important;
-    }
-
-    .scroll-video-sticky {
-        width: 100vw !important;
-        height: 100vh !important;
-    }
-
-    .scroll-video {
-        width: 100vw !important;
-        height: 100vh !important;
-        object-fit: contain !important;
-    }
+/* Content above video, if needed */
+.scroll-video-content {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
 }
