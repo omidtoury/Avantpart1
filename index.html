@@ -423,11 +423,10 @@ $(document).ready(function()
             playsinline
             webkit-playsinline
             preload="auto"
-            poster="video/videozinc-poster.jpg"
             disablepictureinpicture>
-
+            
             <source src="video/videozinc.mp4" type="video/mp4">
-
+            
         </video>
 
         <div class="scroll-video-overlay"></div>
@@ -449,51 +448,32 @@ $(document).ready(function()
     let targetTime = 0;
     let currentTime = 0;
     let animationFrame = null;
-
+    let isPrepared = false;
 
     /*
-     * Video metadata
+     * آمادگی بدون فلش زدن برای iOS Safari
      */
-    video.addEventListener("loadedmetadata", function () {
+    function wakeUpIOSVideo() {
+        if (isPrepared) return;
+        isPrepared = true;
 
+        // تغییر ناچیز زمان به جای play/pause برای آماده‌سازی Decoder بدون پرش تصویر
+        if (video.readyState >= 1) {
+            try {
+                video.currentTime = 0.001;
+            } catch (e) {}
+        }
+    }
+
+    video.addEventListener("loadedmetadata", function () {
         if (isFinite(video.duration) && video.duration > 0) {
             duration = video.duration;
         }
-
-        currentTime = 0;
-        targetTime = 0;
-
-        /*
-         * Keep the video at the first frame.
-         * The poster remains visible until the browser
-         * has a decoded video frame available.
-         */
         try {
             video.currentTime = 0;
         } catch (e) {}
-
     });
 
-
-    /*
-     * When the browser has enough data to decode
-     * the first frame, remove nothing manually.
-     * The browser will replace the poster with the
-     * actual video frame.
-     */
-    video.addEventListener("canplay", function () {
-
-        if (video.currentTime === 0) {
-            currentTime = 0;
-            targetTime = 0;
-        }
-
-    });
-
-
-    /*
-     * Calculate scroll progress.
-     */
     function updateVideoPosition() {
 
         const rect = section.getBoundingClientRect();
@@ -514,66 +494,38 @@ $(document).ready(function()
         }
     }
 
-
-    /*
-     * Smooth video seeking.
-     */
     function smoothSeek() {
 
         animationFrame = null;
 
         const difference = targetTime - currentTime;
 
-        currentTime += difference * 0.25;
+        // ضریب نرمی حرکت
+        currentTime += difference * 0.2;
 
-        if (Math.abs(difference) < 0.01) {
+        if (Math.abs(difference) < 0.005) {
             currentTime = targetTime;
         }
 
-
-        /*
-         * IMPORTANT:
-         *
-         * Do not attempt currentTime seeking until
-         * the browser has decoded enough media data.
-         */
-        if (video.readyState >= 2) {
+        // پشتیبانی بهتر از readyState در مرورگرهای همراه
+        if (video.readyState >= 1) {
             try {
                 video.currentTime = currentTime;
             } catch (e) {}
         }
 
-
-        if (Math.abs(targetTime - currentTime) > 0.01) {
-            animationFrame =
-                requestAnimationFrame(smoothSeek);
+        if (Math.abs(targetTime - currentTime) > 0.005) {
+            animationFrame = requestAnimationFrame(smoothSeek);
         }
     }
 
+    // فعال‌سازی بیدارباش ویدیو روی اولین تعامل لمسی یا اسکرول بدون فلش
+    window.addEventListener("touchstart", wakeUpIOSVideo, { passive: true, once: true });
+    window.addEventListener("scroll", wakeUpIOSVideo, { passive: true, once: true });
 
-    /*
-     * Scroll
-     */
-    window.addEventListener(
-        "scroll",
-        updateVideoPosition,
-        { passive: true }
-    );
+    window.addEventListener("scroll", updateVideoPosition, { passive: true });
+    window.addEventListener("resize", updateVideoPosition, { passive: true });
 
-
-    /*
-     * Resize / orientation
-     */
-    window.addEventListener(
-        "resize",
-        updateVideoPosition,
-        { passive: true }
-    );
-
-
-    /*
-     * Initial position
-     */
     updateVideoPosition();
 
 })();
