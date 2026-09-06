@@ -560,43 +560,72 @@ $(document).ready(function()
 
     const video = document.getElementById("productVideo");
 
-    if (!video) return;
+    if (!video) {
+        alert("ERROR: productVideo not found");
+        return;
+    }
 
-    const button = document.createElement("button");
+    const startTime = performance.now();
 
-    button.innerText = "TEST VIDEO";
-    button.style.position = "fixed";
-    button.style.top = "20px";
-    button.style.left = "20px";
-    button.style.zIndex = "99999";
-    button.style.padding = "12px 20px";
-    button.style.fontSize = "16px";
+    function getState(label) {
 
-    document.body.appendChild(button);
+        const elapsed =
+            ((performance.now() - startTime) / 1000).toFixed(1);
 
-    button.addEventListener("click", function () {
+        return (
+            "\n\n===== " + label + " =====\n" +
+            "Elapsed: " + elapsed + " sec\n" +
+            "readyState: " + video.readyState + "\n" +
+            "networkState: " + video.networkState + "\n" +
+            "error: " + (video.error ? video.error.code : "none") + "\n" +
+            "duration: " + video.duration + "\n" +
+            "currentTime: " + video.currentTime + "\n" +
+            "paused: " + video.paused + "\n" +
+            "videoWidth: " + video.videoWidth + "\n" +
+            "videoHeight: " + video.videoHeight
+        );
+    }
 
-        video.play().then(function () {
+    let result = "VIDEO DIAGNOSTIC";
 
-            alert(
-                "PLAY SUCCESS\n\n" +
-                "readyState: " + video.readyState + "\n" +
-                "currentTime: " + video.currentTime + "\n" +
-                "duration: " + video.duration
-            );
+    // وضعیت اولیه
+    result += getState("INITIAL");
 
-        }).catch(function (error) {
+    // بعد از 3 ثانیه
+    setTimeout(function () {
+        result += getState("AFTER 3 SECONDS");
 
-            alert(
-                "PLAY FAILED\n\n" +
-                "Error: " + error + "\n\n" +
-                "readyState: " + video.readyState + "\n" +
-                "networkState: " + video.networkState
-            );
+        // بعد از 10 ثانیه
+        setTimeout(function () {
+            result += getState("AFTER 10 SECONDS");
 
-        });
+            // وضعیت قبل از Play را ذخیره کن
+            result += getState("BEFORE PLAY");
 
-    });
+            // حالا Play را امتحان کن
+            video.play().then(function () {
+
+                result += getState("AFTER PLAY");
+
+                alert(result);
+
+                // برگرداندن ویدیو به حالت اولیه
+                video.pause();
+                video.currentTime = 0;
+
+            }).catch(function (error) {
+
+                result +=
+                    "\n\n===== PLAY FAILED =====\n" +
+                    "Error: " + error;
+
+                alert(result);
+
+            });
+
+        }, 7000);
+
+    }, 3000);
 
 })();
 </script></div>
