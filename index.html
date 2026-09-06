@@ -421,12 +421,13 @@ $(document).ready(function()
             class="scroll-video"
             muted
             playsinline
-            preload="auto"
             webkit-playsinline
+            preload="auto"
+            poster="video/videozinc-poster.jpg"
             disablepictureinpicture>
-            
+
             <source src="video/videozinc.mp4" type="video/mp4">
-            
+
         </video>
 
         <div class="scroll-video-overlay"></div>
@@ -449,24 +450,49 @@ $(document).ready(function()
     let currentTime = 0;
     let animationFrame = null;
 
+
     /*
-     * Wait until video metadata is loaded.
-     * The actual duration will be used automatically.
+     * Video metadata
      */
     video.addEventListener("loadedmetadata", function () {
+
         if (isFinite(video.duration) && video.duration > 0) {
             duration = video.duration;
         }
 
-        video.currentTime = 0;
+        currentTime = 0;
+        targetTime = 0;
+
+        /*
+         * Keep the video at the first frame.
+         * The poster remains visible until the browser
+         * has a decoded video frame available.
+         */
+        try {
+            video.currentTime = 0;
+        } catch (e) {}
+
     });
 
 
     /*
-     * Calculate scroll progress inside the section.
-     *
-     * 0%  = beginning of video
-     * 100% = end of video
+     * When the browser has enough data to decode
+     * the first frame, remove nothing manually.
+     * The browser will replace the poster with the
+     * actual video frame.
+     */
+    video.addEventListener("canplay", function () {
+
+        if (video.currentTime === 0) {
+            currentTime = 0;
+            targetTime = 0;
+        }
+
+    });
+
+
+    /*
+     * Calculate scroll progress.
      */
     function updateVideoPosition() {
 
@@ -479,9 +505,6 @@ $(document).ready(function()
 
         let progress = -rect.top / scrollableDistance;
 
-        /*
-         * Keep progress between 0 and 1
-         */
         progress = Math.max(0, Math.min(1, progress));
 
         targetTime = progress * duration;
@@ -493,7 +516,7 @@ $(document).ready(function()
 
 
     /*
-     * Smoothly move the video toward the target frame.
+     * Smooth video seeking.
      */
     function smoothSeek() {
 
@@ -501,31 +524,35 @@ $(document).ready(function()
 
         const difference = targetTime - currentTime;
 
-        /*
-         * Smoothing factor.
-         * Increase for faster response.
-         */
         currentTime += difference * 0.25;
 
-        /*
-         * Avoid tiny unnecessary updates.
-         */
         if (Math.abs(difference) < 0.01) {
             currentTime = targetTime;
         }
 
+
+        /*
+         * IMPORTANT:
+         *
+         * Do not attempt currentTime seeking until
+         * the browser has decoded enough media data.
+         */
         if (video.readyState >= 2) {
-            video.currentTime = currentTime;
+            try {
+                video.currentTime = currentTime;
+            } catch (e) {}
         }
 
+
         if (Math.abs(targetTime - currentTime) > 0.01) {
-            animationFrame = requestAnimationFrame(smoothSeek);
+            animationFrame =
+                requestAnimationFrame(smoothSeek);
         }
     }
 
 
     /*
-     * Update whenever the user scrolls.
+     * Scroll
      */
     window.addEventListener(
         "scroll",
@@ -535,7 +562,7 @@ $(document).ready(function()
 
 
     /*
-     * Also update after resize/orientation changes.
+     * Resize / orientation
      */
     window.addEventListener(
         "resize",
@@ -545,87 +572,9 @@ $(document).ready(function()
 
 
     /*
-     * Initial position.
+     * Initial position
      */
     updateVideoPosition();
-
-})();
-</script>
-
-
-
-
-<script>
-(function () {
-
-    const video = document.getElementById("productVideo");
-
-    if (!video) {
-        alert("ERROR: productVideo not found");
-        return;
-    }
-
-    const startTime = performance.now();
-
-    function getState(label) {
-
-        const elapsed =
-            ((performance.now() - startTime) / 1000).toFixed(1);
-
-        return (
-            "\n\n===== " + label + " =====\n" +
-            "Elapsed: " + elapsed + " sec\n" +
-            "readyState: " + video.readyState + "\n" +
-            "networkState: " + video.networkState + "\n" +
-            "error: " + (video.error ? video.error.code : "none") + "\n" +
-            "duration: " + video.duration + "\n" +
-            "currentTime: " + video.currentTime + "\n" +
-            "paused: " + video.paused + "\n" +
-            "videoWidth: " + video.videoWidth + "\n" +
-            "videoHeight: " + video.videoHeight
-        );
-    }
-
-    let result = "VIDEO DIAGNOSTIC";
-
-    // وضعیت اولیه
-    result += getState("INITIAL");
-
-    // بعد از 3 ثانیه
-    setTimeout(function () {
-        result += getState("AFTER 3 SECONDS");
-
-        // بعد از 10 ثانیه
-        setTimeout(function () {
-            result += getState("AFTER 10 SECONDS");
-
-            // وضعیت قبل از Play را ذخیره کن
-            result += getState("BEFORE PLAY");
-
-            // حالا Play را امتحان کن
-            video.play().then(function () {
-
-                result += getState("AFTER PLAY");
-
-                alert(result);
-
-                // برگرداندن ویدیو به حالت اولیه
-                video.pause();
-                video.currentTime = 0;
-
-            }).catch(function (error) {
-
-                result +=
-                    "\n\n===== PLAY FAILED =====\n" +
-                    "Error: " + error;
-
-                alert(result);
-
-            });
-
-        }, 7000);
-
-    }, 3000);
 
 })();
 </script></div>
