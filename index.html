@@ -414,7 +414,6 @@ $(document).ready(function()
 
 
 
-
 <style>
 /* =========================================
    SCROLL-DRIVEN PRODUCT VIDEO
@@ -461,6 +460,7 @@ $(document).ready(function()
     pointer-events: none;
 }
 </style>
+
 
 
 <div class="scroll-video-section" id="productScrollVideo">
@@ -545,7 +545,7 @@ $(document).ready(function()
         video.play().then(function () {
 
             video.pause();
-            video.currentTime = 0;
+            video.currentTime = 1/60;
 
             currentTime = 0;
             targetTime = 0;
