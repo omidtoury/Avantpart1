@@ -410,8 +410,7 @@ $(document).ready(function()
 <div class="col-1">
 <div id="wb_Card4" style="display:flex;width:100%;z-index:8;" class="card">
 <div id="Card4-card-body">
-<div id="Card4-card-item0">```html
-
+<div id="Card4-card-item0">
 
 <div class="scroll-video-section" id="productScrollVideo">
 
@@ -422,14 +421,12 @@ $(document).ready(function()
             class="scroll-video"
             muted
             playsinline
-            webkit-playsinline
             preload="auto"
+            webkit-playsinline
             disablepictureinpicture>
-
-            <source
-                src="video/videozinc.mp4"
-                type="video/mp4">
-
+            
+            <source src="video\videozinc.mp4" type="video/mp4">
+            
         </video>
 
         <div class="scroll-video-overlay"></div>
@@ -452,83 +449,23 @@ $(document).ready(function()
     let currentTime = 0;
     let animationFrame = null;
 
-
     /*
-     * When video metadata is available,
-     * get the real duration.
+     * Wait until video metadata is loaded.
+     * The actual duration will be used automatically.
      */
     video.addEventListener("loadedmetadata", function () {
-
         if (isFinite(video.duration) && video.duration > 0) {
             duration = video.duration;
         }
 
         video.currentTime = 0;
-
     });
 
 
     /*
-     * iOS FIX
+     * Calculate scroll progress inside the section.
      *
-     * iPhone may load the video metadata but remain at
-     * readyState = 1 without rendering the first frame
-     * while the video is paused.
-     *
-     * We briefly start the muted inline video so that
-     * WebKit initializes the video decoder/rendering pipeline.
-     *
-     * Immediately after that, we pause it and return
-     * to frame 0.
-     *
-     * Desktop behavior is kept unchanged.
-     */
-    function prepareVideoForIOS() {
-
-        const isIOS =
-            /iPad|iPhone|iPod/.test(navigator.userAgent) ||
-            (navigator.platform === "MacIntel" &&
-             navigator.maxTouchPoints > 1);
-
-        if (!isIOS) return;
-
-        video.play().then(function () {
-
-            video.pause();
-            video.currentTime = 0;
-
-            currentTime = 0;
-            targetTime = 0;
-
-        }).catch(function () {
-
-            /*
-             * If iOS refuses the programmatic play,
-             * the normal scroll logic continues.
-             */
-
-        });
-
-    }
-
-
-    /*
-     * Wait until the page/video has loaded enough
-     * before preparing the iOS video pipeline.
-     */
-    window.addEventListener("load", function () {
-
-        setTimeout(function () {
-            prepareVideoForIOS();
-        }, 100);
-
-    });
-
-
-    /*
-     * Calculate scroll progress.
-     *
-     * 0%   = beginning of video
+     * 0%  = beginning of video
      * 100% = end of video
      */
     function updateVideoPosition() {
@@ -542,6 +479,9 @@ $(document).ready(function()
 
         let progress = -rect.top / scrollableDistance;
 
+        /*
+         * Keep progress between 0 and 1
+         */
         progress = Math.max(0, Math.min(1, progress));
 
         targetTime = progress * duration;
@@ -549,7 +489,6 @@ $(document).ready(function()
         if (!animationFrame) {
             animationFrame = requestAnimationFrame(smoothSeek);
         }
-
     }
 
 
@@ -562,8 +501,15 @@ $(document).ready(function()
 
         const difference = targetTime - currentTime;
 
+        /*
+         * Smoothing factor.
+         * Increase for faster response.
+         */
         currentTime += difference * 0.25;
 
+        /*
+         * Avoid tiny unnecessary updates.
+         */
         if (Math.abs(difference) < 0.01) {
             currentTime = targetTime;
         }
@@ -575,7 +521,6 @@ $(document).ready(function()
         if (Math.abs(targetTime - currentTime) > 0.01) {
             animationFrame = requestAnimationFrame(smoothSeek);
         }
-
     }
 
 
@@ -590,7 +535,7 @@ $(document).ready(function()
 
 
     /*
-     * Update after resize/orientation changes.
+     * Also update after resize/orientation changes.
      */
     window.addEventListener(
         "resize",
@@ -606,8 +551,55 @@ $(document).ready(function()
 
 })();
 </script>
-```
-</div>
+
+
+
+
+<script>
+(function () {
+
+    const video = document.getElementById("productVideo");
+
+    if (!video) return;
+
+    const button = document.createElement("button");
+
+    button.innerText = "TEST VIDEO";
+    button.style.position = "fixed";
+    button.style.top = "20px";
+    button.style.left = "20px";
+    button.style.zIndex = "99999";
+    button.style.padding = "12px 20px";
+    button.style.fontSize = "16px";
+
+    document.body.appendChild(button);
+
+    button.addEventListener("click", function () {
+
+        video.play().then(function () {
+
+            alert(
+                "PLAY SUCCESS\n\n" +
+                "readyState: " + video.readyState + "\n" +
+                "currentTime: " + video.currentTime + "\n" +
+                "duration: " + video.duration
+            );
+
+        }).catch(function (error) {
+
+            alert(
+                "PLAY FAILED\n\n" +
+                "Error: " + error + "\n\n" +
+                "readyState: " + video.readyState + "\n" +
+                "networkState: " + video.networkState
+            );
+
+        });
+
+    });
+
+})();
+</script></div>
 </div>
 </div>
 </div>
