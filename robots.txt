@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://www.avantpart.com/sitemap.xml
+
+Sitemap: https://avantpart.com/sitemap.xml
