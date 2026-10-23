@@ -284,5 +284,86 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
-</script></body>
+</script><!-- AVANTPART cookie consent test: Tawk.to loads only after acceptance of non-essential cookies. -->
+<style>
+#ap-cookie-banner{position:fixed;z-index:2147483000;left:16px;right:16px;bottom:16px;max-width:560px;margin-left:auto;margin-right:auto;background:#fff;color:#222;border:1px solid #ddd;border-radius:14px;box-shadow:0 8px 36px rgba(0,0,0,.22);padding:22px;font-family:Arial,Helvetica,sans-serif;transform:translateY(calc(100% + 30px));visibility:hidden;transition:transform .38s ease,visibility .38s;box-sizing:border-box}
+#ap-cookie-banner.ap-visible{transform:translateY(0);visibility:visible}
+#ap-cookie-banner *{box-sizing:border-box}
+#ap-cookie-banner h2{font-size:20px;line-height:1.3;margin:0 0 10px;font-weight:700;color:#171717}
+#ap-cookie-banner p{font-size:14px;line-height:1.55;margin:0 0 12px;color:#333}
+#ap-cookie-banner .ap-note{background:#f4f2ee;padding:11px 12px;border-radius:8px;margin:0 0 15px}
+#ap-cookie-banner .ap-actions{display:flex;flex-direction:column;gap:9px}
+#ap-cookie-banner button{font:600 14px Arial,Helvetica,sans-serif;min-height:43px;width:100%;padding:11px 14px;border-radius:7px;cursor:pointer}
+#ap-cookie-accept{background:#171717;color:#fff;border:1px solid #171717}
+#ap-cookie-reject{background:#fff;color:#171717;border:1px solid #777}
+#ap-cookie-settings-link{position:fixed;z-index:2147482999;left:12px;bottom:12px;background:#fff;color:#222;border:1px solid #bbb;border-radius:20px;padding:8px 12px;font:12px Arial,Helvetica,sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.12);display:none}
+@media(max-width:480px){#ap-cookie-banner{left:10px;right:10px;bottom:10px;padding:18px}#ap-cookie-banner h2{font-size:18px}}
+</style>
+<section id="ap-cookie-banner" role="dialog" aria-modal="true" aria-labelledby="ap-cookie-title" aria-describedby="ap-cookie-description">
+  <h2 id="ap-cookie-title">Your privacy matters</h2>
+  <p id="ap-cookie-description">We use cookies and similar technologies to support website features and, if you agree, provide online chat support.</p>
+  <p class="ap-note"><strong>Please note:</strong> If you reject non-essential cookies, our online chat may not be available. You can still contact AVANTPART by email at <a href="mailto:info@avantpart.com">info@avantpart.com</a>.</p>
+  <div class="ap-actions">
+    <button type="button" id="ap-cookie-accept">Accept All Cookies</button>
+    <button type="button" id="ap-cookie-reject">Reject Non-Essential Cookies</button>
+  </div>
+</section>
+<button type="button" id="ap-cookie-settings-link" aria-label="Change cookie preferences">Cookie preferences</button>
+<script>
+(function(){
+  var consentKey = 'avantpart_cookie_consent_v1';
+  var banner = document.getElementById('ap-cookie-banner');
+  var acceptButton = document.getElementById('ap-cookie-accept');
+  var rejectButton = document.getElementById('ap-cookie-reject');
+  var settingsButton = document.getElementById('ap-cookie-settings-link');
+  var tawkLoaded = false;
+
+  function showBanner() {
+    banner.classList.add('ap-visible');
+    settingsButton.style.display = 'none';
+  }
+  function hideBanner() {
+    banner.classList.remove('ap-visible');
+    settingsButton.style.display = 'block';
+  }
+  function loadTawk() {
+    if (tawkLoaded || document.getElementById('ap-tawk-script')) return;
+    tawkLoaded = true;
+    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_LoadStart = new Date();
+    var s = document.createElement('script');
+    s.id = 'ap-tawk-script';
+    s.async = true;
+    s.src = 'https://embed.tawk.to/6ad4e2356ba58934c2e23a34/1k57p78n7';
+    s.charset = 'UTF-8';
+    s.setAttribute('crossorigin', '*');
+    document.body.appendChild(s);
+  }
+  function choose(value) {
+    try { localStorage.setItem(consentKey, value); } catch(e) {}
+    hideBanner();
+    if (value === 'accepted') loadTawk();
+    else {
+      // Do not load Tawk.to when non-essential cookies are rejected.
+      // Cookies previously set by a third-party chat provider may need to expire or be cleared separately.
+    }
+  }
+  acceptButton.addEventListener('click', function(){ choose('accepted'); });
+  rejectButton.addEventListener('click', function(){ choose('rejected'); });
+  settingsButton.addEventListener('click', showBanner);
+
+  var saved = null;
+  try { saved = localStorage.getItem(consentKey); } catch(e) {}
+  if (saved === 'accepted') {
+    settingsButton.style.display = 'block';
+    loadTawk();
+  } else if (saved === 'rejected') {
+    settingsButton.style.display = 'block';
+  } else {
+    showBanner();
+  }
+})();
+</script>
+<!-- End AVANTPART cookie consent test -->
+</body>
 </html>
