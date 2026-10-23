@@ -63,11 +63,12 @@ $(document).ready(function()
 <!-- Privacy page: block Meta Pixel and Google advertising scripts on this page only. -->
 <script>
 (function () {
-  var blocked = /(^|\\.)((connect\\.facebook\\.net)|(facebook\\.com\\/tr)|(googleadservices\\.com)|(googlesyndication\\.com)|(doubleclick\\.net)|(googletagmanager\\.com))($|\\/)/i;
+  var blockedHosts = ['connect.facebook.net', 'facebook.com/tr', 'googleadservices.com', 'googlesyndication.com', 'doubleclick.net', 'googletagmanager.com'];
   function isAdScript(value) {
     try {
       var u = new URL(value, location.href);
-      return blocked.test(u.hostname + u.pathname);
+      var target = (u.hostname + u.pathname).toLowerCase();
+      return blockedHosts.some(function (part) { return target.indexOf(part) !== -1; });
     } catch (e) { return false; }
   }
   var originalCreateElement = document.createElement;
