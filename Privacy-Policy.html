@@ -60,47 +60,6 @@ $(document).ready(function()
    skrollrInit();
 });
 </script>
-<!-- Privacy page: block Meta Pixel and Google advertising scripts on this page only. -->
-<script>
-(function () {
-  var blockedHosts = ['connect.facebook.net', 'facebook.com/tr', 'googleadservices.com', 'googlesyndication.com', 'doubleclick.net', 'googletagmanager.com'];
-  function isAdScript(value) {
-    try {
-      var u = new URL(value, location.href);
-      var target = (u.hostname + u.pathname).toLowerCase();
-      return blockedHosts.some(function (part) { return target.indexOf(part) !== -1; });
-    } catch (e) { return false; }
-  }
-  var originalCreateElement = document.createElement;
-  document.createElement = function (tagName, options) {
-    var element = originalCreateElement.call(document, tagName, options);
-    if (String(tagName).toLowerCase() === 'script') {
-      var originalSetAttribute = element.setAttribute;
-      element.setAttribute = function (name, value) {
-        if (String(name).toLowerCase() === 'src' && isAdScript(value)) return;
-        return originalSetAttribute.call(this, name, value);
-      };
-      var srcDescriptor = Object.getOwnPropertyDescriptor(HTMLScriptElement.prototype, 'src');
-      if (srcDescriptor && srcDescriptor.set) {
-        Object.defineProperty(element, 'src', {
-          configurable: true,
-          enumerable: true,
-          get: function () { return srcDescriptor.get.call(this); },
-          set: function (value) {
-            if (!isAdScript(value)) srcDescriptor.set.call(this, value);
-          }
-        });
-      }
-    }
-    return element;
-  };
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('script[src]').forEach(function (script) {
-      if (isAdScript(script.src)) script.remove();
-    });
-  });
-})();
-</script>
 <link rel="icon" type="image/png" href="favicon.png">
 
 </head>
